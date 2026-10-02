@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AetherMesh — AI Workflow Opportunity Scan</title>
-<meta name="description" content="Find the work your company should automate with AI. AetherMesh maps one real workflow, defines human approval points, and turns the analysis into a controlled pilot.">
+<meta name="description" content="Find the work your company should automate with AI.">
 <style>
 :root{--bg:#090a0d;--panel:#111319;--line:#272b35;--text:#f4f4f0;--muted:#a6abb8;--accent:#d9ff72}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#182014 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
@@ -17,50 +16,38 @@ main{max-width:1120px;margin:auto;padding:28px 22px 80px}.nav{display:flex;justi
 @media(max-width:760px){.grid,.steps,.form{grid-template-columns:1fr}.hero h1{font-size:52px}.nav{padding-bottom:45px}}
 </style>
 </head>
-<body>
-<main>
+<body><main>
 <header class="nav"><div class="logo">AETHERMESH</div><div class="tag">AI-native operations</div></header>
-<section class="hero">
-<div class="tag">Free workflow scan</div>
+<section class="hero"><div class="tag">Free workflow scan</div>
 <h1>Find the work your company should automate with AI.</h1>
 <p>AetherMesh maps one real business workflow, identifies where specialist agents can help, defines what stays human-controlled, and turns the analysis into a production-ready pilot.</p>
-<a class="cta" href="#scan">Get the free workflow scan →</a>
-</section>
-
+<a class="cta" href="#scan">Get the free workflow scan →</a></section>
 <section class="grid">
 <article class="card"><div class="tag">01 · Map</div><h3>See the workflow</h3><p class="muted">Trigger → inputs → reasoning → actions → approvals → output → feedback.</p></article>
-<article class="card"><div class="tag">02 · Design</div><h3>Place the agents</h3><p class="muted">Use specialist agents only where research, analysis, execution or QA actually adds value.</p></article>
+<article class="card"><div class="tag">02 · Design</div><h3>Place the agents</h3><p class="muted">Use specialist agents only where research, analysis, execution or QA adds value.</p></article>
 <article class="card"><div class="tag">03 · Prove</div><h3>Measure the pilot</h3><p class="muted">Define accuracy, cycle time, cost, escalation and human-intervention targets before production.</p></article>
 </section>
-
-<section class="flow">
-<div class="tag">The commercial path</div>
-<h2>From one workflow to an operating system.</h2>
-<div class="steps">
-<div class="step"><b>Scan</b><span class="muted">Free diagnostic</span></div>
-<div class="step"><b>Map</b><span class="muted">Paid opportunity map</span></div>
-<div class="step"><b>Pilot</b><span class="muted">Controlled proof</span></div>
-<div class="step"><b>Deploy</b><span class="muted">Production workflow</span></div>
-<div class="step"><b>Operate</b><span class="muted">Managed agents</span></div>
-</div>
-</section>
-
-<section class="audit" id="scan">
-<div class="tag">Start here</div>
-<h2>Tell us about one repetitive workflow.</h2>
+<section class="flow"><div class="tag">The commercial path</div><h2>From one workflow to an operating system.</h2>
+<div class="steps"><div class="step"><b>Scan</b><span class="muted">Free diagnostic</span></div><div class="step"><b>Map</b><span class="muted">Paid opportunity map</span></div><div class="step"><b>Pilot</b><span class="muted">Controlled proof</span></div><div class="step"><b>Deploy</b><span class="muted">Production workflow</span></div><div class="step"><b>Operate</b><span class="muted">Managed agents</span></div></div></section>
+<section class="audit" id="scan"><div class="tag">Start here</div><h2>Tell us about one repetitive workflow.</h2>
 <p class="muted">No pitch deck required. Give us enough context to identify where an agent system could fit and where it should not.</p>
-<form class="form" action="mailto:hello@aethermesh.ai" method="post" enctype="text/plain">
-<input name="name" placeholder="Your name" required>
-<input name="email" type="email" placeholder="Work email" required>
-<input name="company" placeholder="Company" required>
-<input name="website" placeholder="Company website">
+<form class="form" id="scan-form">
+<input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Work email" required>
+<input name="company" placeholder="Company" required><input name="website" placeholder="Company website">
 <textarea name="workflow" placeholder="Describe the workflow: who does it, how often, what tools are involved, and what currently slows it down." required></textarea>
-<button type="submit">Request my free workflow scan</button>
-</form>
-<p class="note">This static prototype uses your email client for submission. Production deployment should replace it with a secure API/form endpoint and consent/privacy handling.</p>
+<button type="submit">Prepare my workflow scan request</button></form>
+<p class="note" id="status">Prototype mode: submission prepares a structured request for the AetherMesh team. Connect a secure form/API endpoint before public launch.</p>
 </section>
-
 <footer class="footer">AetherMesh · Governed AI workflows for measurable business operations.</footer>
 </main>
-</body>
-</html>
+<script>
+document.getElementById("scan-form").addEventListener("submit",function(e){
+ e.preventDefault();
+ const d=Object.fromEntries(new FormData(e.currentTarget));
+ const subject=encodeURIComponent("AetherMesh Workflow Scan — "+d.company);
+ const body=encodeURIComponent("Name: "+d.name+"\nWork email: "+d.email+"\nCompany: "+d.company+"\nWebsite: "+d.website+"\n\nWorkflow:\n"+d.workflow);
+ window.location.href="mailto:?subject="+subject+"&body="+body;
+ document.getElementById("status").textContent="Request prepared. Connect the production endpoint to route submissions automatically.";
+});
+</script>
+</body></html>
