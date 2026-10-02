@@ -1,33 +1,15 @@
-name: Deploy AetherMesh website to GitHub Pages
+# GitHub Pages has been retired as the AetherMesh production host.
+# Production deployment is now handled by .github/workflows/aethermesh-cloudflare.yml.
+name: AetherMesh GitHub Pages (retired)
+
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  deploy:
+  retired:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./site
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Explain retirement
+        run: |
+          echo "GitHub Pages is retired for production."
+          echo "Use the Cloudflare production workflow instead."
