@@ -1,0 +1,2 @@
+const BLOCKED=[/steal.*credential/i,/exfiltrat(e|ion).*secret/i,/deploy.*malware/i,/credential.*theft/i];const REVIEW=[/delete.*production/i,/drop.*database/i,/rotate.*all.*keys/i,/destroy.*resource/i];
+export function evaluatePolicy(task){if(BLOCKED.some(r=>r.test(task)))return{decision:"deny",reason:"Prohibited credential, secret-exfiltration, or malware pattern."};if(REVIEW.some(r=>r.test(task)))return{decision:"review",reason:"Destructive production action requires human approval."};return{decision:"allow",reason:"No restricted pattern matched."}}
