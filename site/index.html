@@ -2,44 +2,178 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="AetherMesh designs, evaluates and operates governed AI workflows for modern companies.">
-<meta name="theme-color" content="#070809">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070708">
+<meta name="description" content="AetherMesh builds governed AI operating systems for real business workflows. Discover, design, prove and operate AI execution systems.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AetherMesh — Governed AI Workflows">
-<meta property="og:description" content="Find the work worth automating. AetherMesh designs, evaluates and operates governed AI workflows.">
-<title>AetherMesh — Governed AI Workflows</title>
+<meta property="og:title" content="AetherMesh — The execution layer for AI-native companies">
+<meta property="og:description" content="Find the work worth automating. Design the agent system. Prove it safely. Operate it.">
+<meta property="og:url" content="https://mutayibnissar.github.io/aethermesh/">
+<link rel="canonical" href="https://mutayibnissar.github.io/aethermesh/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23070708'/%3E%3Cpath d='M25 67 50 21l25 46-25-12Z' fill='none' stroke='%23d7ff55' stroke-width='7' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='53' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<title>AetherMesh — AI Operating Systems</title>
 <style>
-:root{--bg:#070809;--panel:#0e1113;--line:#25292c;--text:#f2f0e9;--muted:#a4a7a8;--accent:#d8ff65;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#18200d 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 24px}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:-.04em;font-size:20px}.brand span{color:var(--accent)}.navlinks{display:flex;gap:26px;color:var(--muted)}.navlinks a:hover{color:var(--text)}
-.hero{padding:110px 0 90px;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(48px,7vw,86px);line-height:.94;letter-spacing:-.065em;margin:18px 0 28px;max-width:800px}.hero p{font-size:20px;color:var(--muted);max-width:680px}.actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}.btn{padding:13px 18px;border:1px solid var(--line);border-radius:9px;background:#121518}.btn.primary{background:var(--accent);color:#0a0c08;border-color:var(--accent);font-weight:800}.runtime{background:linear-gradient(145deg,#111619,#090b0c);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 25px 80px #0008}.runtime h3{margin:0 0 18px}.step{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line)}.step b{font-size:13px}.step span{color:var(--muted);font-size:13px}
-section{padding:88px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;gap:30px;margin-bottom:38px}.sectionhead h2{font-size:42px;line-height:1;letter-spacing:-.05em;margin:0}.sectionhead p{color:var(--muted);max-width:530px;margin:0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:24px;min-height:190px}.card .num{color:var(--accent);font-size:12px;font-weight:800}.card h3{margin:30px 0 8px}.card p{color:var(--muted);margin:0}.offers{display:grid;grid-template-columns:1fr 1fr;gap:14px}.offer{padding:30px;background:linear-gradient(145deg,#111416,#0b0d0e);border:1px solid var(--line);border-radius:16px}.offer h3{font-size:25px;margin:5px 0 10px}.price{font-size:14px;color:var(--accent);font-weight:800}.offer p{color:var(--muted)}.band{padding:70px 0;text-align:center}.band h2{font-size:48px;letter-spacing:-.05em;margin:0 auto 18px;max-width:760px}.band p{color:var(--muted);max-width:650px;margin:auto}footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);display:flex;justify-content:space-between}
-@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:70px}.grid{grid-template-columns:1fr 1fr}.offers{grid-template-columns:1fr}.navlinks{display:none}.sectionhead{display:block}.sectionhead p{margin-top:18px}}@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h1{font-size:52px}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#070708;--ink:#f5f4ef;--muted:#9c9c9d;--dim:#67686a;--line:rgba(255,255,255,.1);--line2:rgba(255,255,255,.16);--acid:#d7ff55;--acid2:#b6e83b;--violet:#8d7cff;--cyan:#65e6ff;--panel:#0d0e10;--panel2:#111216;--max:1240px;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");z-index:20}a{color:inherit;text-decoration:none}button{font:inherit}.shell{max-width:var(--max);margin:auto;padding:0 28px}.mono{font:DM Mono,monospace}.eyebrow{font:11px/1.2 DM Mono,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--acid)}.muted{color:var(--muted)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s}header.scrolled{background:rgba(7,7,8,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font:700 19px 'Space Grotesk',sans-serif;letter-spacing:-.04em}.mark{width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line2);border-radius:9px;background:#0d0e10;box-shadow:inset 0 0 20px rgba(215,255,85,.05)}.mark svg{width:18px}.brand b{color:var(--acid)}.links{display:flex;gap:28px;color:#aaa;font-size:13px}.links a{transition:.2s}.links a:hover{color:#fff}.nav-cta{border:1px solid var(--line2);border-radius:999px;padding:10px 15px;font-size:12px;font-weight:800;background:#101114}.nav-cta:hover{border-color:var(--acid);color:var(--acid)}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px}
+
+.hero{min-height:100svh;position:relative;display:grid;align-items:center;padding:145px 0 85px;isolation:isolate}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}.hero h1{font:600 clamp(58px,8vw,112px)/.88 'Space Grotesk',sans-serif;letter-spacing:-.075em;margin:22px 0 30px;max-width:850px}.hero h1 em{font-style:normal;color:var(--acid)}.hero-copy{font-size:18px;color:#b4b4b5;max-width:680px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line2);background:#101114;padding:14px 18px;border-radius:12px;font-size:13px;font-weight:800;transition:.25s;cursor:pointer}.btn:hover{transform:translateY(-2px);border-color:#fff;background:#15161a}.btn.primary{background:var(--acid);color:#0a0b08;border-color:var(--acid)}.btn.primary:hover{background:#e2ff86}.micro{margin-top:19px;font:11px DM Mono;color:#67686a}.hero-orb{position:absolute;width:760px;height:760px;right:-300px;top:80px;background:radial-gradient(circle,rgba(215,255,85,.12),rgba(141,124,255,.06) 30%,transparent 67%);filter:blur(8px);z-index:-2}.grid-bg{position:absolute;inset:0;z-index:-3;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 80%)}#constellation{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.7}
+
+.system-card{position:relative;border:1px solid var(--line2);border-radius:28px;background:linear-gradient(145deg,rgba(20,21,24,.88),rgba(9,10,11,.92));padding:20px;box-shadow:0 35px 100px rgba(0,0,0,.45);overflow:hidden}.system-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-90px;top:-90px;background:rgba(215,255,85,.08);filter:blur(25px)}.card-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:17px;border-bottom:1px solid var(--line)}.live{display:flex;align-items:center;gap:7px;font:10px DM Mono;color:#aaa}.live i{width:6px;height:6px;border-radius:50%;background:var(--acid);box-shadow:0 0 12px var(--acid);animation:pulse 1.6s infinite}@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}.telemetry{font:10px DM Mono;color:#666}.flow{padding:18px 0}.flow-row{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)}.node{width:28px;height:28px;border:1px solid var(--line2);border-radius:9px;display:grid;place-items:center;font:10px DM Mono;color:var(--acid)}.flow-row b{font-size:12px}.flow-row span{display:block;color:#666;font-size:10px;margin-top:2px}.state{font:10px DM Mono;color:#777}.state.ok{color:var(--acid)}.terminal{margin-top:5px;background:#08090a;border:1px solid var(--line);border-radius:15px;padding:15px;font:11px/1.7 DM Mono;color:#9b9b9c}.terminal .g{color:var(--acid)}.terminal .v{color:#b5aaff}
+
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}.ticker-track{display:inline-flex;gap:44px;min-width:max-content;padding:17px 0;font:10px DM Mono;letter-spacing:.12em;color:#6d6e70;text-transform:uppercase;animation:marquee 28s linear infinite}@keyframes marquee{to{transform:translateX(-50%)}}.dot{color:var(--acid)}
+
+section{padding:125px 0;border-bottom:1px solid var(--line)}.section-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:end;margin-bottom:60px}.section-intro h2{font:600 clamp(42px,5.5vw,76px)/.94 'Space Grotesk';letter-spacing:-.065em;margin:15px 0 0}.section-intro p{max-width:570px;color:#9c9c9d;font-size:16px;margin:0}.kicker{font:11px DM Mono;color:var(--acid);letter-spacing:.14em;text-transform:uppercase}
+
+.manifesto{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden}.manifesto > div{background:var(--panel);padding:42px;min-height:260px}.manifesto h3{font:600 31px/1.05 'Space Grotesk';letter-spacing:-.04em;margin:15px 0}.manifesto p{color:#8e8f91;max-width:480px}.manifesto .big{font:600 clamp(30px,4vw,56px)/1 'Space Grotesk';letter-spacing:-.055em}.manifesto .big span{color:var(--acid)}
+
+.demo{border:1px solid var(--line2);border-radius:28px;background:#0b0c0e;overflow:hidden;box-shadow:0 35px 100px rgba(0,0,0,.25)}.demo-bar{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;border-bottom:1px solid var(--line);background:#101114}.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:#36373a}.demo-label{font:10px DM Mono;color:#666}.demo-body{display:grid;grid-template-columns:280px 1fr;min-height:470px}.demo-side{border-right:1px solid var(--line);padding:20px}.workflow-btn{width:100%;text-align:left;border:1px solid transparent;background:transparent;color:#999;padding:13px;border-radius:11px;margin-bottom:5px;cursor:pointer}.workflow-btn:hover,.workflow-btn.active{background:#14161a;color:#fff;border-color:var(--line)}.workflow-btn.active:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acid);margin:0 9px 2px 0}.demo-main{padding:25px}.demo-head{display:flex;justify-content:space-between;gap:20px;align-items:start}.demo-head h3{font:600 30px/1 'Space Grotesk';letter-spacing:-.045em;margin:0}.score{border:1px solid var(--line);border-radius:12px;padding:9px 12px;font:10px DM Mono;color:var(--acid);white-space:nowrap}.timeline{margin-top:30px}.stage{display:grid;grid-template-columns:30px 1fr auto;gap:13px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:.45;transition:.4s}.stage.on{opacity:1}.stage .bubble{width:27px;height:27px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;font:9px DM Mono}.stage.on .bubble{border-color:var(--acid);color:var(--acid);box-shadow:0 0 20px rgba(215,255,85,.1)}.stage b{font-size:12px}.stage small{display:block;color:#666;font-size:10px;margin-top:3px}.stage .tag{font:9px DM Mono;color:#666}.stage.on .tag{color:var(--acid)}.runbar{margin-top:24px;display:flex;align-items:center;gap:14px}.runbar .btn{padding:10px 14px}.progress{height:3px;flex:1;background:#1d1e21;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:var(--acid);transition:1s}
+
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.product{position:relative;min-height:265px;border:1px solid var(--line);background:linear-gradient(150deg,#111216,#0a0b0d);border-radius:20px;padding:25px;overflow:hidden;transition:.35s}.product:hover{transform:translateY(-6px);border-color:var(--line2);background:#121419}.product .index{font:10px DM Mono;color:#555}.product .glyph{position:absolute;right:20px;top:20px;width:46px;height:46px;border:1px solid var(--line);border-radius:13px;display:grid;place-items:center;color:var(--acid);font:12px DM Mono}.product h3{font:600 25px 'Space Grotesk';letter-spacing:-.04em;margin:58px 0 9px}.product p{font-size:12px;color:#85868a;margin:0}.product .arrow{position:absolute;bottom:20px;right:23px;color:#555;transition:.2s}.product:hover .arrow{color:var(--acid);transform:translate(3px,-3px)}
+
+.arch{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:24px;overflow:hidden}.arch-left{padding:45px;background:linear-gradient(135deg,#121317,#0b0c0e)}.arch-right{padding:35px;background:#090a0b}.arch-left h3{font:600 45px/1 'Space Grotesk';letter-spacing:-.06em;margin:12px 0 22px}.arch-left p{color:#8d8e90;max-width:500px}.layers{display:grid;gap:10px}.layer{border:1px solid var(--line);border-radius:15px;padding:17px;background:#101114;display:flex;justify-content:space-between;align-items:center}.layer b{font-size:12px}.layer span{font:10px DM Mono;color:#666}.layer.core{border-color:rgba(215,255,85,.3);box-shadow:inset 0 0 40px rgba(215,255,85,.025)}.layer.core span{color:var(--acid)}
+
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.offer{position:relative;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#121318,#0a0b0d);padding:35px;min-height:300px}.offer.featured{border-color:rgba(215,255,85,.38);box-shadow:0 0 80px rgba(215,255,85,.045)}.offer .price{font:10px DM Mono;color:var(--acid);letter-spacing:.1em}.offer h3{font:600 33px 'Space Grotesk';letter-spacing:-.045em;margin:18px 0 12px}.offer p{color:#88898b;max-width:520px;font-size:13px}.offer .btn{position:absolute;left:35px;bottom:32px}
+
+.final{padding:150px 0 120px;text-align:center;position:relative;overflow:hidden}.final h2{font:600 clamp(50px,8vw,105px)/.87 'Space Grotesk';letter-spacing:-.08em;max-width:1000px;margin:15px auto 25px}.final h2 span{color:var(--acid)}.final p{max-width:650px;color:#929396;margin:auto}.final .actions{justify-content:center}.final-glow{position:absolute;width:600px;height:300px;left:50%;top:80px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(215,255,85,.09),transparent 65%);pointer-events:none}
+footer{padding:27px 0;color:#5f6062;font:10px DM Mono;display:flex;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:20px}.footer-links a:hover{color:#fff}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none}
+.cursor{position:fixed;left:0;top:0;width:18px;height:18px;border:1px solid rgba(215,255,85,.8);border-radius:50%;pointer-events:none;z-index:100;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .2s,height .2s;display:none}.cursor-dot{position:fixed;left:0;top:0;width:4px;height:4px;border-radius:50%;background:var(--acid);pointer-events:none;z-index:101;display:none}.cursor.big{width:42px;height:42px}
+.mobile-panel{display:none}
+
+@media(max-width:950px){.links{display:none}.menu{display:block}.hero-grid,.section-intro,.arch{grid-template-columns:1fr}.hero{padding-top:125px}.hero-orb{right:-400px}.product-grid{grid-template-columns:1fr 1fr}.demo-body{grid-template-columns:210px 1fr}.manifesto{grid-template-columns:1fr}}
+@media(max-width:620px){.shell{padding:0 18px}.hero h1{font-size:57px}.hero-copy{font-size:16px}.hero{padding-top:110px}.system-card{margin-top:10px}.section-intro{gap:25px;margin-bottom:35px}.product-grid,.offers{grid-template-columns:1fr}.demo-body{grid-template-columns:1fr}.demo-side{display:flex;gap:5px;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}.workflow-btn{min-width:160px;margin:0}.demo-main{padding:20px 15px}.manifesto > div,.arch-left{padding:28px}.arch-right{padding:20px}.offer{min-height:330px}.footer-links{gap:10px}.cursor,.cursor-dot{display:none!important}section{padding:90px 0}.final{padding:110px 0 90px}}
+@media(pointer:fine){.cursor,.cursor-dot{display:block}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav><a class="brand" href="#">Aether<span>Mesh</span></a><div class="navlinks"><a href="#products">Products</a><a href="#method">Method</a><a href="#offers">Work with us</a><a href="https://github.com/Mutayibnissar/aethermesh">Engineering</a></div></nav>
-<main>
-<section class="hero" style="border-top:0">
-<div><div class="eyebrow">AI Operations Company</div><h1>Find the work worth automating.</h1><p>AetherMesh designs, evaluates and operates governed AI workflows around the work your company already does — turning repetitive coordination into measurable execution capacity.</p><div class="actions"><a class="btn primary" href="#offers">Explore a workflow →</a><a class="btn" href="https://github.com/Mutayibnissar/aethermesh">View the engineering layer</a></div></div>
-<div class="runtime"><div class="eyebrow">AetherMesh Runtime</div><h3>Governed execution loop</h3><div class="step"><b>01 · Observe</b><span>Understand context</span></div><div class="step"><b>02 · Prepare</b><span>Build evidence + plan</span></div><div class="step"><b>03 · Execute</b><span>Run approved work</span></div><div class="step"><b>04 · Commit</b><span>Human-controlled impact</span></div></div>
-</section>
-<section id="method"><div class="sectionhead"><h2>From messy work<br>to reliable execution.</h2><p>We do not start with a model. We start with a business workflow, its owner, its inputs and outputs, its risks and the evidence required to know whether automation is working.</p></div><div class="grid"><div class="card"><div class="num">01 / FIND</div><h3>Workflow intelligence</h3><p>Identify repetitive coordination and quantify the operational bottleneck.</p></div><div class="card"><div class="num">02 / ARCHITECT</div><h3>Agent systems</h3><p>Design specialist agents, tools, routing, approvals and system boundaries.</p></div><div class="card"><div class="num">03 / EVALUATE</div><h3>Proof before scale</h3><p>Test quality, cost, latency, safety and business outcomes against a baseline.</p></div><div class="card"><div class="num">04 / OPERATE</div><h3>Continuous control</h3><p>Monitor production workflows, permissions, spend, failures and changes.</p></div></div></section>
-<section id="products"><div class="sectionhead"><h2>One operating layer.<br>Multiple business surfaces.</h2><p>Products share the same orchestration, policy, evaluation and execution foundation.</p></div><div class="grid">
-<div class="card"><div class="num">MESHOPS</div><h3>Workflow OS</h3><p>Build and operate AI workflows around real business processes.</p></div>
-<div class="card"><div class="num">MESHG​UARD</div><h3>Governance</h3><p>Permissions, evaluation, auditability, policy and agent controls.</p></div>
-<div class="card"><div class="num">MESHSUPPORT</div><h3>Customer Ops</h3><p>Evidence-backed ticket triage, investigation and response workflows.</p></div>
-<div class="card"><div class="num">MESHREVENUE</div><h3>Revenue Ops</h3><p>Research, qualification, CRM intelligence and pipeline preparation.</p></div>
-<div class="card"><div class="num">MESHD​ESK</div><h3>IT Operations</h3><p>Incident context, runbook retrieval, diagnosis and governed remediation.</p></div>
-<div class="card"><div class="num">MESHFINOPS</div><h3>AI Cost Control</h3><p>Track inference economics and optimize model routing and spend.</p></div>
-<div class="card"><div class="num">MESHDATA</div><h3>AI Readiness</h3><p>Find data, integration and knowledge gaps before deployment.</p></div>
-<div class="card"><div class="num">MESHINTEL</div><h3>Market Intelligence</h3><p>Continuously monitor competitors, markets, technology and regulation.</p></div>
-</div></section>
-<section id="offers"><div class="sectionhead"><h2>Start with one<br>workflow.</h2><p>Fixed-scope entry products let a team prove value before committing to a broader AI operating program.</p></div><div class="offers"><div class="offer"><div class="price">$1,500 · 7 BUSINESS DAYS</div><h3>Workflow Diagnostic</h3><p>Current-state map, automation opportunities, agent architecture, approval policy, data/integration map, evaluation plan and business-case model.</p><a class="btn" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=Workflow%20Diagnostic">Request a diagnostic →</a></div><div class="offer"><div class="price">$7,500+ · FIXED SCOPE</div><h3>Workflow Pilot</h3><p>Turn one recurring workflow into a governed AI pilot with a baseline, evaluation suite, controlled execution and production handoff plan.</p><a class="btn primary" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=Workflow%20Pilot">Discuss a pilot →</a></div></div></section>
-<section class="band"><h2>AI should create execution capacity — not another layer of complexity.</h2><p>AetherMesh connects specialist agents, workflow orchestration, evaluation and governance into a system designed for measurable business work.</p><div class="actions" style="justify-content:center"><a class="btn primary" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=AetherMesh%20Conversation">Talk to AetherMesh →</a></div></section>
-</main>
-<footer><span>© 2026 AetherMesh</span><span>Governed AI workflows for modern companies.</span></footer>
+<div class="cursor"></div><div class="cursor-dot"></div>
+<header id="header"><div class="shell nav">
+<a class="brand" href="#top"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 17.5 12 4l7 13.5-7-3.5-7 3.5Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/></svg></span>Aether<b>Mesh</b></a>
+<nav class="links"><a href="#system">System</a><a href="#products">Products</a><a href="#architecture">Architecture</a><a href="#work">Work with us</a></nav>
+<a class="nav-cta" href="#work">Build a workflow ↗</a><button class="menu" aria-label="Open navigation">☰</button>
+</div></header>
+
+<main id="top">
+<section class="hero">
+<canvas id="constellation" aria-hidden="true"></canvas><div class="grid-bg"></div><div class="hero-orb"></div>
+<div class="shell hero-grid">
+<div class="reveal">
+<div class="eyebrow">AI OPERATING SYSTEMS · 2026</div>
+<h1>Make AI <em>execute.</em><br>Not just answer.</h1>
+<p class="hero-copy">AetherMesh turns recurring business work into governed AI workflows — with specialist agents, deterministic orchestration, evaluation and human-controlled execution.</p>
+<div class="actions"><a class="btn primary" href="#demo">Run the experience <span>↓</span></a><a class="btn" href="https://github.com/Mutayibnissar/aethermesh">Explore the engineering ↗</a></div>
+<div class="micro">OBSERVE → PREPARE → EXECUTE → COMMIT &nbsp;·&nbsp; CONTROL BY DESIGN</div>
 </div>
-</body></html>
+<div class="system-card reveal" id="system-card">
+<div class="card-top"><div class="live"><i></i> AETHERMESH RUNTIME · LIVE MODEL</div><div class="telemetry">LOCAL EXPERIENCE / 01</div></div>
+<div class="flow">
+<div class="flow-row"><div class="node">01</div><div><b>Context intake</b><span>Systems · data · business rules</span></div><div class="state ok">READY</div></div>
+<div class="flow-row"><div class="node">02</div><div><b>Specialist routing</b><span>Match work to the right agent</span></div><div class="state ok">ROUTED</div></div>
+<div class="flow-row"><div class="node">03</div><div><b>Evidence + evaluation</b><span>Quality · risk · cost · confidence</span></div><div class="state">CHECK</div></div>
+<div class="flow-row"><div class="node">04</div><div><b>Human-controlled commit</b><span>Approve consequential actions</span></div><div class="state">GATED</div></div>
+</div>
+<div class="terminal"><span class="g">aethermesh</span> / workflow.run<br>→ policy: <span class="v">human_approval_required</span><br>→ evaluation: <span class="g">passed</span><br>→ execution boundary: <span class="v">controlled</span></div>
+</div>
+</div>
+</section>
+
+<div class="ticker"><div class="ticker-track"><span>WORKFLOW INTELLIGENCE</span><i class="dot">✦</i><span>AGENT ORCHESTRATION</span><i class="dot">✦</i><span>EVALUATION</span><i class="dot">✦</i><span>GOVERNANCE</span><i class="dot">✦</i><span>AI OPERATIONS</span><i class="dot">✦</i><span>WORKFLOW INTELLIGENCE</span><i class="dot">✦</i><span>AGENT ORCHESTRATION</span><i class="dot">✦</i><span>EVALUATION</span><i class="dot">✦</i><span>GOVERNANCE</span><i class="dot">✦</i><span>AI OPERATIONS</span></div></div>
+
+<section id="system"><div class="shell">
+<div class="section-intro reveal"><div><div class="kicker">01 / The thesis</div><h2>AI is becoming an execution layer.</h2></div><p>Modern AI systems are moving beyond chat into workflow execution. The opportunity is not adding another assistant — it is designing a controlled system around work that already creates value.</p></div>
+<div class="manifesto reveal">
+<div><div class="eyebrow">THE OLD LOOP</div><div class="big">Human → tool → human → spreadsheet → <span>repeat.</span></div><p>Fragmented systems create coordination overhead, context switching and hidden operational cost.</p></div>
+<div><div class="eyebrow">THE AETHER LOOP</div><div class="big">Context → agents → evidence → policy → <span>execution.</span></div><p>AetherMesh connects specialist agents to a workflow with explicit evaluation and approval boundaries.</p></div>
+</div>
+</div></section>
+
+<section id="demo"><div class="shell">
+<div class="section-intro reveal"><div><div class="kicker">02 / Interactive lab</div><h2>See a workflow become a system.</h2></div><p>This is a simulated product experience built into the site. Switch workflows, inspect the agent chain and run the controlled execution sequence.</p></div>
+<div class="demo reveal">
+<div class="demo-bar"><div class="dots"><i></i><i></i><i></i></div><div class="demo-label">AETHERMESH / WORKFLOW LAB</div><div class="demo-label">SIMULATION</div></div>
+<div class="demo-body">
+<aside class="demo-side">
+<button class="workflow-btn active" data-flow="support">Customer operations</button>
+<button class="workflow-btn" data-flow="research">Market intelligence</button>
+<button class="workflow-btn" data-flow="revenue">Revenue operations</button>
+<button class="workflow-btn" data-flow="it">IT incident</button>
+</aside>
+<div class="demo-main">
+<div class="demo-head"><div><div class="eyebrow">CONTROLLED WORKFLOW</div><h3 id="flow-title">Resolve a customer request</h3></div><div class="score" id="flow-score">EVAL 94 / 100</div></div>
+<div class="timeline" id="timeline"></div>
+<div class="runbar"><button class="btn primary" id="run">Run simulation ↗</button><div class="progress"><i id="progress"></i></div><span class="mono" id="run-status" style="font-size:10px;color:#666">IDLE</span></div>
+</div>
+</div>
+</div>
+</div></section>
+
+<section id="products"><div class="shell">
+<div class="section-intro reveal"><div><div class="kicker">03 / Product surfaces</div><h2>One mesh.<br>Many workflows.</h2></div><p>AetherMesh is designed as a common execution and governance layer, then exposed through focused products for the business functions where recurring work can be measured.</p></div>
+<div class="product-grid">
+<div class="product reveal"><span class="index">01</span><span class="glyph">MO</span><h3>MeshOps</h3><p>AI Workflow Operating System. Build, evaluate and operate recurring workflows.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">02</span><span class="glyph">MG</span><h3>MeshGuard</h3><p>Agent governance, permissions, evaluations, audit trails and policy controls.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">03</span><span class="glyph">MS</span><h3>MeshSupport</h3><p>Evidence-backed customer operations from intake to resolution.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">04</span><span class="glyph">MR</span><h3>MeshRevenue</h3><p>Account research, qualification, CRM intelligence and pipeline preparation.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">05</span><span class="glyph">MD</span><h3>MeshDesk</h3><p>Context, diagnosis and governed remediation for IT operations.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">06</span><span class="glyph">MF</span><h3>MeshFinOps</h3><p>AI usage economics, model routing and cost-performance control.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">07</span><span class="glyph">MX</span><h3>MeshData</h3><p>AI readiness, data quality, knowledge structures and integration gaps.</p><span class="arrow">↗</span></div>
+<div class="product reveal"><span class="index">08</span><span class="glyph">MI</span><h3>MeshIntel</h3><p>Continuous market, competitor, technology and regulatory intelligence.</p><span class="arrow">↗</span></div>
+</div>
+</div></section>
+
+<section id="architecture"><div class="shell">
+<div class="section-intro reveal"><div><div class="kicker">04 / Architecture</div><h2>Built as infrastructure,<br>not a demo.</h2></div><p>The commercial products sit on a shared runtime: agents are discovered, routed, governed, evaluated and composed into repeatable workflows.</p></div>
+<div class="arch reveal"><div class="arch-left"><div class="eyebrow">THE MESH</div><h3>Specialists in. Control around them.</h3><p>Models can change. Providers can change. Individual agents can change. The operating layer remains responsible for routing, policy, evaluation and workflow state.</p><div class="actions"><a class="btn" href="https://github.com/Mutayibnissar/aethermesh">Inspect the repo ↗</a></div></div>
+<div class="arch-right"><div class="layers">
+<div class="layer"><b>Business products</b><span>MeshOps · Support · Revenue · Desk</span></div>
+<div class="layer"><b>Workflow orchestration</b><span>dependencies · state · execution</span></div>
+<div class="layer"><b>Policy + governance</b><span>permissions · approvals · audit</span></div>
+<div class="layer"><b>Evaluation</b><span>quality · safety · cost · regression</span></div>
+<div class="layer core"><b>AetherMesh runtime</b><span>CORE EXECUTION LAYER</span></div>
+</div></div></div>
+</div></section>
+
+<section id="work"><div class="shell">
+<div class="section-intro reveal"><div><div class="kicker">05 / Commercial entry</div><h2>Start with one<br>workflow.</h2></div><p>Don't begin with a transformation programme. Begin with one recurring process, one owner, one measurable baseline and a controlled pilot.</p></div>
+<div class="offers">
+<div class="offer reveal"><div class="price">FIXED SCOPE · 7 BUSINESS DAYS</div><h3>Workflow Diagnostic</h3><p>Map the current workflow, identify automation candidates, design the agent system, define approval boundaries, map data and integrations, and build an evaluation plan.</p><a class="btn" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=Workflow%20Diagnostic">Request a diagnostic ↗</a></div>
+<div class="offer featured reveal"><div class="price">PILOT · $7,500+ TARGET</div><h3>Workflow Pilot</h3><p>Turn one recurring workflow into a governed AI pilot with a baseline, evaluation suite, controlled execution and a production handoff plan.</p><a class="btn primary" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=Workflow%20Pilot">Discuss a pilot ↗</a></div>
+</div>
+</div></section>
+
+<section class="final"><div class="final-glow"></div><div class="shell reveal"><div class="eyebrow">AETHERMESH</div><h2>Give your company an <span>execution layer.</span></h2><p>Find the work worth automating. Design the agent system. Prove it safely. Operate it.</p><div class="actions"><a class="btn primary" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=AetherMesh%20Conversation">Start a conversation ↗</a><a class="btn" href="#top">Back to top ↑</a></div></div></section>
+</main>
+
+<div class="shell"><footer><span>© 2026 AetherMesh · Governed AI workflows</span><div class="footer-links"><a href="https://github.com/Mutayibnissar/aethermesh">GitHub ↗</a><a href="#system">System</a><a href="#work">Contact</a></div></footer></div>
+
+<script>
+const flows={
+ support:{title:"Resolve a customer request",score:"EVAL 94 / 100",steps:[["01","Classify request","intent · urgency · account context","ROUTE"],["02","Retrieve evidence","product docs · account history · policy","SEARCH"],["03","Prepare resolution","draft answer + recommended action","DRAFT"],["04","Quality gate","evidence + confidence + policy check","EVAL"],["05","Human commit","approve consequential response","GATE"]]},
+ research:{title:"Generate a market intelligence brief",score:"EVAL 91 / 100",steps:[["01","Collect signals","news · company changes · public sources","SCAN"],["02","Verify sources","source quality · freshness · conflicts","VERIFY"],["03","Analyse movement","trend · competitor · opportunity signals","ANALYSE"],["04","Synthesize","executive brief + evidence trail","DRAFT"],["05","Human review","approve interpretation before distribution","GATE"]]},
+ revenue:{title:"Prepare an account for outreach",score:"EVAL 93 / 100",steps:[["01","Research account","company · product · market · triggers","RESEARCH"],["02","Map buyer context","roles · likely workflow · public signals","MAP"],["03","Qualify opportunity","fit · timing · evidence · unknowns","SCORE"],["04","Prepare next action","brief · questions · CRM update","PREP"],["05","Human approval","approve external action","GATE"]]},
+ it:{title:"Investigate an IT incident",score:"EVAL 96 / 100",steps:[["01","Classify incident","severity · affected service · context","TRIAGE"],["02","Gather evidence","logs · tickets · runbooks · recent changes","SEARCH"],["03","Form diagnosis","ranked hypotheses + evidence","DIAGNOSE"],["04","Prepare remediation","safe runbook steps + rollback","PREP"],["05","Human commit","approve risky production action","GATE"]]}
+};
+const timeline=document.getElementById('timeline'),title=document.getElementById('flow-title'),score=document.getElementById('flow-score'),run=document.getElementById('run'),progress=document.getElementById('progress'),status=document.getElementById('run-status');
+let current='support',timer=null;
+function renderFlow(key){current=key;const f=flows[key];title.textContent=f.title;score.textContent=f.score;timeline.innerHTML=f.steps.map((s,i)=>'<div class="stage" data-i="'+i+'"><div class="bubble">'+s[0]+'</div><div><b>'+s[1]+'</b><small>'+s[2]+'</small></div><div class="tag">'+s[3]+'</div></div>').join('');progress.style.width='0';status.textContent='IDLE';}
+document.querySelectorAll('.workflow-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.workflow-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');clearInterval(timer);renderFlow(b.dataset.flow)}));
+run.addEventListener('click',()=>{clearInterval(timer);const stages=[...timeline.querySelectorAll('.stage')];stages.forEach(s=>s.classList.remove('on'));let i=0;status.textContent='RUNNING';timer=setInterval(()=>{if(i<stages.length){stages[i].classList.add('on');progress.style.width=((i+1)/stages.length*100)+'%';status.textContent='STEP '+(i+1)+' / '+stages.length;i++}else{clearInterval(timer);status.textContent='CONTROLLED · COMPLETE'}},650)});
+renderFlow('support');
+
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+const header=document.getElementById('header');addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+const canvas=document.getElementById('constellation'),ctx=canvas.getContext('2d');let W,H,pts=[],mx=-9999,my=-9999;
+function resize(){W=canvas.width=innerWidth*devicePixelRatio;H=canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);pts=Array.from({length:55},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()*1.5+.4}))}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>innerWidth)p.vx*=-1;if(p.y<0||p.y>innerHeight)p.vy*=-1;let d=Math.hypot(p.x-mx,p.y-my);ctx.fillStyle=d<170?'rgba(215,255,85,.8)':'rgba(255,255,255,.25)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){let a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){ctx.strokeStyle='rgba(215,255,85,'+(1-d/120)*.13+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}requestAnimationFrame(draw)}
+addEventListener('resize',resize);addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});resize();draw();
+
+const cur=document.querySelector('.cursor'),dot=document.querySelector('.cursor-dot');addEventListener('pointermove',e=>{dot.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';cur.style.transform='translate('+(e.clientX-9)+'px,'+(e.clientY-9)+'px)'});document.querySelectorAll('a,button,.product').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AetherMesh","url":"https://mutayibnissar.github.io/aethermesh/","description":"Governed AI workflows and AI operating systems for modern companies."}</script>
+</body>
+</html>
