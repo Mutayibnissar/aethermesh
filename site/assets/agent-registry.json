@@ -1,0 +1,607 @@
+{
+  "version": 1,
+  "sourceRepo": "https://github.com/Mutayibnissar/aethermesh",
+  "generatedFrom": "main",
+  "description": "Curated company workforce mapped to agent definitions already present in the AetherMesh repository.",
+  "departments": [
+    "Executive",
+    "Governance",
+    "Strategy",
+    "Product",
+    "Design",
+    "Engineering",
+    "Quality",
+    "Growth",
+    "Revenue",
+    "Finance",
+    "Customer",
+    "People",
+    "Operations"
+  ],
+  "agents": [
+    {
+      "id": "executive-01",
+      "department": "Executive",
+      "name": "Chief of Staff",
+      "mission": "Coordinates cross-functional priorities, decisions and executive follow-through.",
+      "source": "specialized/specialized-chief-of-staff.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-chief-of-staff.md"
+    },
+    {
+      "id": "executive-02",
+      "department": "Executive",
+      "name": "Business Strategist",
+      "mission": "Frames strategic questions, options, trade-offs and operating priorities.",
+      "source": "specialized/business-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/business-strategist.md"
+    },
+    {
+      "id": "executive-03",
+      "department": "Executive",
+      "name": "Operations Manager",
+      "mission": "Turns priorities into repeatable operating processes and execution rhythms.",
+      "source": "specialized/operations-manager.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/operations-manager.md"
+    },
+    {
+      "id": "executive-04",
+      "department": "Executive",
+      "name": "Workflow Architect",
+      "mission": "Designs multi-agent workflows, dependencies and handoffs.",
+      "source": "specialized/specialized-workflow-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-workflow-architect.md"
+    },
+    {
+      "id": "executive-05",
+      "department": "Executive",
+      "name": "Change Management Consultant",
+      "mission": "Plans adoption, stakeholder alignment and operational change.",
+      "source": "specialized/change-management-consultant.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/change-management-consultant.md"
+    },
+    {
+      "id": "governance-06",
+      "department": "Governance",
+      "name": "Automation Governance Architect",
+      "mission": "Defines agent permissions, controls, review boundaries and operating policies.",
+      "source": "specialized/automation-governance-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/automation-governance-architect.md"
+    },
+    {
+      "id": "governance-07",
+      "department": "Governance",
+      "name": "Data Privacy Officer",
+      "mission": "Reviews data handling, privacy obligations and information-flow risks.",
+      "source": "specialized/data-privacy-officer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/data-privacy-officer.md"
+    },
+    {
+      "id": "governance-08",
+      "department": "Governance",
+      "name": "Agentic Identity & Trust",
+      "mission": "Designs identity, trust and authorization boundaries for agentic systems.",
+      "source": "specialized/agentic-identity-trust.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/agentic-identity-trust.md"
+    },
+    {
+      "id": "governance-09",
+      "department": "Governance",
+      "name": "FedRAMP / RMF Compliance",
+      "mission": "Supports structured security and compliance readiness for regulated environments.",
+      "source": "specialized/specialized-fedramp-rmf-compliance.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-fedramp-rmf-compliance.md"
+    },
+    {
+      "id": "strategy-10",
+      "department": "Strategy",
+      "name": "Product Trend Researcher",
+      "mission": "Tracks product, category and market signals for opportunity discovery.",
+      "source": "product/product-trend-researcher.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/product/product-trend-researcher.md"
+    },
+    {
+      "id": "strategy-11",
+      "department": "Strategy",
+      "name": "Academic Statistician",
+      "mission": "Supports quantitative analysis, evidence synthesis and statistical reasoning.",
+      "source": "academic/academic-statistician.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/academic/academic-statistician.md"
+    },
+    {
+      "id": "strategy-12",
+      "department": "Strategy",
+      "name": "Cultural Intelligence Strategist",
+      "mission": "Adds regional and cultural context to global product and go-to-market decisions.",
+      "source": "specialized/specialized-cultural-intelligence-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-cultural-intelligence-strategist.md"
+    },
+    {
+      "id": "strategy-13",
+      "department": "Strategy",
+      "name": "Pricing Analyst",
+      "mission": "Analyses pricing structures, packaging and monetization hypotheses.",
+      "source": "specialized/specialized-pricing-analyst.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-pricing-analyst.md"
+    },
+    {
+      "id": "product-14",
+      "department": "Product",
+      "name": "Product Manager",
+      "mission": "Owns product requirements, prioritization and cross-functional product decisions.",
+      "source": "product/product-manager.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/product/product-manager.md"
+    },
+    {
+      "id": "product-15",
+      "department": "Product",
+      "name": "Product Feedback Synthesizer",
+      "mission": "Converts customer and user feedback into product insights.",
+      "source": "product/product-feedback-synthesizer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/product/product-feedback-synthesizer.md"
+    },
+    {
+      "id": "product-16",
+      "department": "Product",
+      "name": "Product Sprint Prioritizer",
+      "mission": "Prioritizes sprint scope against impact, effort and constraints.",
+      "source": "product/product-sprint-prioritizer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/product/product-sprint-prioritizer.md"
+    },
+    {
+      "id": "product-17",
+      "department": "Product",
+      "name": "Behavioral Nudge Engine",
+      "mission": "Designs evidence-informed activation and behavior interventions.",
+      "source": "product/product-behavioral-nudge-engine.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/product/product-behavioral-nudge-engine.md"
+    },
+    {
+      "id": "product-18",
+      "department": "Product",
+      "name": "DX Engineer",
+      "mission": "Improves developer experience, tooling and product adoption for technical users.",
+      "source": "product/product-dx-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/product/product-dx-engineer.md"
+    },
+    {
+      "id": "design-19",
+      "department": "Design",
+      "name": "UX Architect",
+      "mission": "Structures information architecture and end-to-end user experience.",
+      "source": "design/design-ux-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/design/design-ux-architect.md"
+    },
+    {
+      "id": "design-20",
+      "department": "Design",
+      "name": "UX Researcher",
+      "mission": "Investigates user needs, friction and experience evidence.",
+      "source": "design/design-ux-researcher.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/design/design-ux-researcher.md"
+    },
+    {
+      "id": "design-21",
+      "department": "Design",
+      "name": "UI Designer",
+      "mission": "Designs interface systems, components and visual interaction patterns.",
+      "source": "design/design-ui-designer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/design/design-ui-designer.md"
+    },
+    {
+      "id": "design-22",
+      "department": "Design",
+      "name": "Brand Guardian",
+      "mission": "Maintains consistent visual and verbal brand expression.",
+      "source": "design/design-brand-guardian.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/design/design-brand-guardian.md"
+    },
+    {
+      "id": "design-23",
+      "department": "Design",
+      "name": "Visual Storyteller",
+      "mission": "Turns complex ideas into clear visual narratives and presentations.",
+      "source": "design/design-visual-storyteller.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/design/design-visual-storyteller.md"
+    },
+    {
+      "id": "engineering-24",
+      "department": "Engineering",
+      "name": "AI Engineer",
+      "mission": "Builds AI features, agent capabilities and model-powered workflows.",
+      "source": "engineering/engineering-ai-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-ai-engineer.md"
+    },
+    {
+      "id": "engineering-25",
+      "department": "Engineering",
+      "name": "Multi-Agent Systems Architect",
+      "mission": "Designs agent collaboration, delegation and orchestration architectures.",
+      "source": "engineering/engineering-multi-agent-systems-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-multi-agent-systems-architect.md"
+    },
+    {
+      "id": "engineering-26",
+      "department": "Engineering",
+      "name": "Software Architect",
+      "mission": "Defines scalable application architecture and technical boundaries.",
+      "source": "engineering/engineering-software-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-software-architect.md"
+    },
+    {
+      "id": "engineering-27",
+      "department": "Engineering",
+      "name": "Backend Architect",
+      "mission": "Designs backend services, APIs, data flows and reliability boundaries.",
+      "source": "engineering/engineering-backend-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-backend-architect.md"
+    },
+    {
+      "id": "engineering-28",
+      "department": "Engineering",
+      "name": "Frontend Developer",
+      "mission": "Builds production interfaces and frontend experiences.",
+      "source": "engineering/engineering-frontend-developer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-frontend-developer.md"
+    },
+    {
+      "id": "engineering-29",
+      "department": "Engineering",
+      "name": "API Platform Engineer",
+      "mission": "Builds API platforms, integration surfaces and service contracts.",
+      "source": "engineering/engineering-api-platform-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-api-platform-engineer.md"
+    },
+    {
+      "id": "engineering-30",
+      "department": "Engineering",
+      "name": "Data Engineer",
+      "mission": "Builds reliable data pipelines, transformations and data products.",
+      "source": "engineering/engineering-data-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-data-engineer.md"
+    },
+    {
+      "id": "engineering-31",
+      "department": "Engineering",
+      "name": "RAG Pipeline Engineer",
+      "mission": "Designs retrieval, grounding and knowledge-access pipelines.",
+      "source": "engineering/engineering-rag-pipeline-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-rag-pipeline-engineer.md"
+    },
+    {
+      "id": "engineering-32",
+      "department": "Engineering",
+      "name": "DevOps Automator",
+      "mission": "Automates deployment, infrastructure and engineering operations.",
+      "source": "engineering/engineering-devops-automator.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-devops-automator.md"
+    },
+    {
+      "id": "engineering-33",
+      "department": "Engineering",
+      "name": "SRE",
+      "mission": "Improves production reliability, observability and incident readiness.",
+      "source": "engineering/engineering-sre.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-sre.md"
+    },
+    {
+      "id": "engineering-34",
+      "department": "Engineering",
+      "name": "Identity & Access Engineer",
+      "mission": "Implements authentication, authorization and access controls.",
+      "source": "engineering/engineering-identity-access-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-identity-access-engineer.md"
+    },
+    {
+      "id": "engineering-35",
+      "department": "Engineering",
+      "name": "Privacy Engineer",
+      "mission": "Builds privacy-aware technical controls and data-handling patterns.",
+      "source": "engineering/engineering-privacy-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-privacy-engineer.md"
+    },
+    {
+      "id": "engineering-36",
+      "department": "Engineering",
+      "name": "Rapid Prototyper",
+      "mission": "Converts concepts into fast technical proofs and prototypes.",
+      "source": "engineering/engineering-rapid-prototyper.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-rapid-prototyper.md"
+    },
+    {
+      "id": "quality-37",
+      "department": "Quality",
+      "name": "Code Reviewer",
+      "mission": "Reviews implementation quality, maintainability and correctness.",
+      "source": "engineering/engineering-code-reviewer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-code-reviewer.md"
+    },
+    {
+      "id": "quality-38",
+      "department": "Quality",
+      "name": "Accessibility Auditor",
+      "mission": "Audits accessibility and inclusive product behavior.",
+      "source": "testing/testing-accessibility-auditor.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/testing/testing-accessibility-auditor.md"
+    },
+    {
+      "id": "quality-39",
+      "department": "Quality",
+      "name": "API Tester",
+      "mission": "Validates API behavior, edge cases and integration contracts.",
+      "source": "testing/testing-api-tester.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/testing/testing-api-tester.md"
+    },
+    {
+      "id": "quality-40",
+      "department": "Quality",
+      "name": "Test Automation Engineer",
+      "mission": "Builds automated regression and workflow validation.",
+      "source": "testing/testing-test-automation-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/testing/testing-test-automation-engineer.md"
+    },
+    {
+      "id": "quality-41",
+      "department": "Quality",
+      "name": "Reality Checker",
+      "mission": "Challenges assumptions and verifies that outputs match real requirements.",
+      "source": "testing/testing-reality-checker.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/testing/testing-reality-checker.md"
+    },
+    {
+      "id": "growth-42",
+      "department": "Growth",
+      "name": "Growth Hacker",
+      "mission": "Finds and tests growth loops, acquisition experiments and activation opportunities.",
+      "source": "marketing/marketing-growth-hacker.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-growth-hacker.md"
+    },
+    {
+      "id": "growth-43",
+      "department": "Growth",
+      "name": "SEO Specialist",
+      "mission": "Improves organic discovery, technical SEO and search-led acquisition.",
+      "source": "marketing/marketing-seo-specialist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-seo-specialist.md"
+    },
+    {
+      "id": "growth-44",
+      "department": "Growth",
+      "name": "Agentic Search Optimizer",
+      "mission": "Optimizes brand discoverability in AI-mediated search experiences.",
+      "source": "marketing/marketing-agentic-search-optimizer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-agentic-search-optimizer.md"
+    },
+    {
+      "id": "growth-45",
+      "department": "Growth",
+      "name": "Content Creator",
+      "mission": "Produces useful content for demand generation and brand building.",
+      "source": "marketing/marketing-content-creator.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-content-creator.md"
+    },
+    {
+      "id": "growth-46",
+      "department": "Growth",
+      "name": "LinkedIn Content Creator",
+      "mission": "Creates professional social content for B2B visibility.",
+      "source": "marketing/marketing-linkedin-content-creator.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-linkedin-content-creator.md"
+    },
+    {
+      "id": "growth-47",
+      "department": "Growth",
+      "name": "Email Strategist",
+      "mission": "Designs lifecycle, nurture and outbound email systems.",
+      "source": "marketing/marketing-email-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-email-strategist.md"
+    },
+    {
+      "id": "growth-48",
+      "department": "Growth",
+      "name": "PR & Communications Manager",
+      "mission": "Shapes external communications, announcements and media narratives.",
+      "source": "marketing/marketing-pr-communications-manager.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/marketing/marketing-pr-communications-manager.md"
+    },
+    {
+      "id": "revenue-49",
+      "department": "Revenue",
+      "name": "Account Strategist",
+      "mission": "Maps target accounts, stakeholders and account-level opportunities.",
+      "source": "sales/sales-account-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-account-strategist.md"
+    },
+    {
+      "id": "revenue-50",
+      "department": "Revenue",
+      "name": "Discovery Coach",
+      "mission": "Structures discovery around business problems, evidence and buying context.",
+      "source": "sales/sales-discovery-coach.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-discovery-coach.md"
+    },
+    {
+      "id": "revenue-51",
+      "department": "Revenue",
+      "name": "Deal Strategist",
+      "mission": "Builds deal strategy, objections handling and progression plans.",
+      "source": "sales/sales-deal-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-deal-strategist.md"
+    },
+    {
+      "id": "revenue-52",
+      "department": "Revenue",
+      "name": "Sales Engineer",
+      "mission": "Connects technical capabilities to buyer requirements and solution design.",
+      "source": "sales/sales-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-engineer.md"
+    },
+    {
+      "id": "revenue-53",
+      "department": "Revenue",
+      "name": "Outbound Strategist",
+      "mission": "Designs targeted outbound sequences and prospecting systems.",
+      "source": "sales/sales-outbound-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-outbound-strategist.md"
+    },
+    {
+      "id": "revenue-54",
+      "department": "Revenue",
+      "name": "Pipeline Analyst",
+      "mission": "Analyses funnel health, conversion and pipeline movement.",
+      "source": "sales/sales-pipeline-analyst.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-pipeline-analyst.md"
+    },
+    {
+      "id": "revenue-55",
+      "department": "Revenue",
+      "name": "Proposal Strategist",
+      "mission": "Structures proposals around outcomes, scope, evidence and next steps.",
+      "source": "sales/sales-proposal-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/sales/sales-proposal-strategist.md"
+    },
+    {
+      "id": "finance-56",
+      "department": "Finance",
+      "name": "Chief Financial Officer",
+      "mission": "Provides financial planning, capital discipline and executive finance analysis.",
+      "source": "specialized/chief-financial-officer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/chief-financial-officer.md"
+    },
+    {
+      "id": "finance-57",
+      "department": "Finance",
+      "name": "Financial Analyst",
+      "mission": "Builds financial analysis, models and decision support.",
+      "source": "finance/finance-financial-analyst.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/finance/finance-financial-analyst.md"
+    },
+    {
+      "id": "finance-58",
+      "department": "Finance",
+      "name": "FP&A Analyst",
+      "mission": "Supports forecasting, budgeting and performance management.",
+      "source": "finance/finance-fpa-analyst.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/finance/finance-fpa-analyst.md"
+    },
+    {
+      "id": "finance-59",
+      "department": "Finance",
+      "name": "Bookkeeper / Controller",
+      "mission": "Maintains financial records, controls and reporting workflows.",
+      "source": "finance/finance-bookkeeper-controller.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/finance/finance-bookkeeper-controller.md"
+    },
+    {
+      "id": "finance-60",
+      "department": "Finance",
+      "name": "FinOps Engineer",
+      "mission": "Optimizes infrastructure and AI-related operating costs.",
+      "source": "engineering/engineering-finops-engineer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/engineering/engineering-finops-engineer.md"
+    },
+    {
+      "id": "customer-61",
+      "department": "Customer",
+      "name": "Customer Success Manager",
+      "mission": "Coordinates onboarding, adoption, health and expansion workflows.",
+      "source": "specialized/customer-success-manager.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/customer-success-manager.md"
+    },
+    {
+      "id": "customer-62",
+      "department": "Customer",
+      "name": "Customer Service",
+      "mission": "Handles structured customer-service workflows and resolution preparation.",
+      "source": "specialized/customer-service.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/customer-service.md"
+    },
+    {
+      "id": "customer-63",
+      "department": "Customer",
+      "name": "Support Responder",
+      "mission": "Prepares consistent support responses and escalation paths.",
+      "source": "support/support-support-responder.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/support/support-support-responder.md"
+    },
+    {
+      "id": "customer-64",
+      "department": "Customer",
+      "name": "Support Analytics Reporter",
+      "mission": "Turns support activity into operational and customer insights.",
+      "source": "support/support-analytics-reporter.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/support/support-analytics-reporter.md"
+    },
+    {
+      "id": "people-65",
+      "department": "People",
+      "name": "Recruitment Specialist",
+      "mission": "Supports recruiting workflows, candidate research and hiring coordination.",
+      "source": "specialized/recruitment-specialist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/recruitment-specialist.md"
+    },
+    {
+      "id": "people-66",
+      "department": "People",
+      "name": "HR Onboarding",
+      "mission": "Runs structured onboarding, documentation and employee enablement workflows.",
+      "source": "specialized/hr-onboarding.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/hr-onboarding.md"
+    },
+    {
+      "id": "people-67",
+      "department": "People",
+      "name": "Organizational Psychologist",
+      "mission": "Provides structured organizational and people-analysis support.",
+      "source": "specialized/organizational-psychologist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/organizational-psychologist.md"
+    },
+    {
+      "id": "people-68",
+      "department": "People",
+      "name": "Corporate Training Designer",
+      "mission": "Designs training, enablement and capability-building programs.",
+      "source": "specialized/corporate-training-designer.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/corporate-training-designer.md"
+    },
+    {
+      "id": "operations-69",
+      "department": "Operations",
+      "name": "Supply Chain Strategist",
+      "mission": "Analyses supply-chain workflows, risks and operating opportunities.",
+      "source": "specialized/supply-chain-strategist.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/supply-chain-strategist.md"
+    },
+    {
+      "id": "operations-70",
+      "department": "Operations",
+      "name": "Report Distribution Agent",
+      "mission": "Packages and distributes recurring business reports.",
+      "source": "specialized/report-distribution-agent.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/report-distribution-agent.md"
+    },
+    {
+      "id": "operations-71",
+      "department": "Operations",
+      "name": "Document Generator",
+      "mission": "Produces structured business documents from governed inputs.",
+      "source": "specialized/specialized-document-generator.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-document-generator.md"
+    },
+    {
+      "id": "operations-72",
+      "department": "Operations",
+      "name": "MCP Builder",
+      "mission": "Builds tool and system connectors for agent workflows.",
+      "source": "specialized/specialized-mcp-builder.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-mcp-builder.md"
+    },
+    {
+      "id": "operations-73",
+      "department": "Operations",
+      "name": "Salesforce Architect",
+      "mission": "Designs CRM architecture and Salesforce workflow integrations.",
+      "source": "specialized/specialized-salesforce-architect.md",
+      "sourceUrl": "https://github.com/Mutayibnissar/aethermesh/blob/main/specialized/specialized-salesforce-architect.md"
+    }
+  ]
+}
