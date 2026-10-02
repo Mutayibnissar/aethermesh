@@ -1,13 +1,17 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const header=$('#header'); if(header)addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>15),{passive:true});
 const menu=$('#menu'),mobile=$('#mobile-nav'); if(menu)menu.addEventListener('click',()=>{mobile.classList.toggle('open');menu.setAttribute('aria-expanded',mobile.classList.contains('open'))});
-$$('[data-close-menu]').forEach(a=>a.addEventListener('click',()=>mobile?.classList.remove('open')));
-const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.1}); $$('.reveal').forEach(x=>io.observe(x));
+$('[data-close-menu]').forEach(a=>a.addEventListener('click',()=>{mobile?.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){mobile?.classList.remove('open');menu?.setAttribute('aria-expanded','false');closeAgent();}});
+document.addEventListener('click',e=>{if(mobile?.classList.contains('open')&&!mobile.contains(e.target)&&!menu?.contains(e.target)){mobile.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+const revealEls=$('.reveal');
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.1});revealEls.forEach(x=>io.observe(x));}else revealEls.forEach(x=>x.classList.add('show'));
 const agentLauncher=$('#agent-launcher'),agentPanel=$('#agent-panel'),agentClose=$('#agent-close'),agentMessages=$('#agent-messages'),agentForm=$('#agent-form'),agentInput=$('#agent-input');
 function addMsg(t,w='agent'){if(!agentMessages)return;const e=document.createElement('div');e.className='agent-msg '+w;e.innerHTML='<span class="agent-label">'+(w==='user'?'YOU':'AETHER')+'</span>';const s=document.createElement('span');s.textContent=t;e.appendChild(s);agentMessages.appendChild(e);agentMessages.scrollTop=agentMessages.scrollHeight}
 function openAgent(){agentPanel?.classList.add('open');if(agentMessages&&!agentMessages.children.length)addMsg("I’m Aether. Ask about products, workflows, governance, pilots, or how to start.");setTimeout(()=>agentInput?.focus(),50)}
 function closeAgent(){agentPanel?.classList.remove('open')}
 agentLauncher?.addEventListener('click',openAgent);agentClose?.addEventListener('click',closeAgent);$$('[data-open-agent]').forEach(x=>x.addEventListener('click',e=>{e.preventDefault();openAgent()}));
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 function reply(q){const s=q.toLowerCase();if(/what is|about aether|aethermesh/.test(s))return"AetherMesh is a governed AI execution layer: specialist agents, deterministic routing, workflow planning, evaluation, policy gates and human-controlled commits.";if(/support|ticket|customer/.test(s))return"MeshSupport handles customer operations: classify, retrieve evidence, prepare a resolution, evaluate quality and route consequential responses for approval.";if(/it|incident|helpdesk/.test(s))return"MeshDesk handles IT operations: triage, evidence gathering, diagnosis, remediation preparation and approval-gated execution.";if(/sales|revenue|crm|lead|outreach/.test(s))return"MeshRevenue handles account research, buyer context, qualification, CRM preparation and next-action planning.";if(/market|competitor|research|trend/.test(s))return"MeshIntel monitors market, competitor, technology and regulatory signals and produces evidence-backed briefs.";if(/governance|security|audit|evaluation/.test(s))return"MeshGuard provides agent inventory, permissions, policies, evaluations, audit trails, approval gates and rollback controls.";if(/price|pricing|cost/.test(s))return"Current commercial targets: Workflow Diagnostic (fixed scope), Workflow Pilot $7,500+, production $15k–$35k, managed operations roughly $3k–$10k/month.";if(/pilot/.test(s))return"The Workflow Pilot turns one recurring workflow into a governed working pilot with a baseline, evaluation suite, controlled execution and production handoff.";return"Describe one recurring workflow and I’ll point you to the relevant AetherMesh product or workflow path."}
 agentForm?.addEventListener('submit',e=>{e.preventDefault();const q=agentInput.value.trim();if(!q)return;addMsg(q,'user');agentInput.value='';setTimeout(()=>addMsg(reply(q)),280)});
 $$('.agent-chip').forEach(x=>x.addEventListener('click',()=>{agentInput.value=x.dataset.q;agentForm.requestSubmit()}));
@@ -35,7 +39,10 @@ function initWorkforce(){
   const live=await callRuntime(q);
   if(live?.ok){
    const rows=(live.workforce||[]).map((x,i)=>'<div class="wf-step '+(i?'':'done')+'"><span class="wf-num">0'+(i+1)+'</span><span class="wf-role">'+x.role+'<small>'+((x.agents||[]).map(a=>a.title||a.id).join(' · ')||'specialist routing')+'</small></span><span class="wf-state">'+(i===live.workforce.length-1?'approval':'complete')+'</span></div>').join('');
-   out.innerHTML='<div class="runtime-live"><span>● RUNTIME CONNECTED</span><span>'+live.routed.length+' agents routed</span><span>policy: '+live.policy.decision+'</span></div>'+rows;
+   const routedCount=Array.isArray(live.routed)?live.routed.length:0;
+   const workforceRows=Array.isArray(live.workforce)?live.workforce:[];
+   const safeRows=workforceRows.map((x,i)=>'<div class="wf-step '+(i?'':'done')+'"><span class="wf-num">0'+(i+1)+'</span><span class="wf-role">'+escapeHtml(x.role||'Specialist')+'<small>'+escapeHtml(((x.agents||[]).map(a=>a.title||a.id).join(' · ')||'specialist routing'))+'</small></span><span class="wf-state">'+(i===workforceRows.length-1?'approval':'complete')+'</span></div>').join('');
+   out.innerHTML='<div class="runtime-live"><span>● RUNTIME CONNECTED</span><span>'+routedCount+' agents routed</span><span>policy: '+escapeHtml(live.policy?.decision||'review')+'</span></div>'+safeRows;
    return;
   }
   let chosen=[roles[0]],s=q.toLowerCase();
@@ -60,7 +67,7 @@ async function initAgentBench(){
   const paint=()=>{
    const q=term.toLowerCase();
    const visible=agents.filter(x=>(dept==='ALL'||x.department===dept)&&(!q||(x.name+' '+x.department+' '+x.mission).toLowerCase().includes(q)));
-   grid.innerHTML=visible.map((x,i)=>'<article class="agent-card reveal show"><div class="agent-card-top"><span class="agent-dept">'+x.department.toUpperCase()+'</span><span class="agent-index">'+String(i+1).padStart(2,'0')+'</span></div><h3>'+x.name+'</h3><p>'+x.mission+'</p><div class="agent-card-foot"><span class="agent-source">'+x.source.replace(/^[^/]+\//,'')+'</span><a href="'+x.sourceUrl+'" target="_blank" rel="noreferrer">Open source ↗</a></div></article>').join('');
+   grid.innerHTML=visible.map((x,i)=>'<article class="agent-card reveal show"><div class="agent-card-top"><span class="agent-dept">'+escapeHtml(x.department).toUpperCase()+'</span><span class="agent-index">'+String(i+1).padStart(2,'0')+'</span></div><h3>'+escapeHtml(x.name)+'</h3><p>'+escapeHtml(x.mission)+'</p><div class="agent-card-foot"><span class="agent-source">'+escapeHtml(x.source.replace(/^[^/]+\//,''))+'</span><a href="'+encodeURI(x.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Open source ↗</a></div></article>').join('');
    count.textContent=visible.length+' of '+agents.length+' agents shown · sourced from your AetherMesh repository';
   };
   filters.addEventListener('click',e=>{const b=e.target.closest('[data-dept]');if(!b)return;dept=b.dataset.dept;filters.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));paint()});
@@ -71,4 +78,15 @@ async function initAgentBench(){
 initAgentBench();
 
 
-const form=$('#contact-form');form?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const title=encodeURIComponent('AetherMesh enquiry — '+(d.get('company')||'Company'));const body=encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\n\nWorkflow / objective:\n'+d.get('workflow'));location.href='https://github.com/Mutayibnissar/aethermesh/issues/new?title='+title+'&body='+body});
+const form=$('#contact-form');
+if(form){
+ const offerField=$('[name="offer"]',form);
+ const requestedOffer=new URLSearchParams(location.search).get('offer');
+ if(requestedOffer&&offerField){const map={pilot:'Workflow Pilot',diagnostic:'Workflow Diagnostic',managed:'Managed Agent Operations'};offerField.value=map[requestedOffer]||offerField.value;}
+ form.addEventListener('submit',e=>{
+  e.preventDefault();const d=new FormData(form);
+  const title=encodeURIComponent('AetherMesh enquiry — '+(d.get('company')||'Company'));
+  const body=encodeURIComponent(['Source: AetherMesh website','Name: '+d.get('name'),'Email: '+d.get('email'),'Company: '+d.get('company'),'Offer: '+d.get('offer'),'','Workflow / objective:',d.get('workflow'),'','Systems / data:',d.get('systems')||'Not provided'].join('\n'));
+  location.href='https://github.com/Mutayibnissar/aethermesh/issues/new?title='+title+'&body='+body;
+ });
+}
