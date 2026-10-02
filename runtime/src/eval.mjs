@@ -1,0 +1,1 @@
+export function evaluateRun({policy,matches=[],completed=0,total=0}){const routing=matches.length?Math.min(1,matches[0].score/10):0;const completion=total?completed/total:0;const policyScore=policy?.decision==="deny"?0:1;return{routing,completion,policyScore,score:Number(((routing+completion+policyScore)/3).toFixed(3))}}
