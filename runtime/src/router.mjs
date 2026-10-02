@@ -1,0 +1,2 @@
+export function scoreAgent(agent,task){const h=(agent.id+" "+agent.title+" "+agent.description+" "+agent.text.slice(0,4000)).toLowerCase();const terms=task.toLowerCase().split(/[^a-z0-9+#.-]+/).filter(x=>x.length>2);let s=0;for(const x of terms){if(h.includes(x))s++;if(agent.title.toLowerCase().includes(x))s+=3}return s}
+export function routeTask(task,agents,limit=5){return agents.map(a=>({agent:a,score:scoreAgent(a,task)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score||a.agent.id.localeCompare(b.agent.id)).slice(0,limit)}
