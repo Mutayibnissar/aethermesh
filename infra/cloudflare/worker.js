@@ -32,6 +32,19 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.hostname === "www.aethermesh.ai") {
+      const canonical = new URL(request.url);
+      canonical.hostname = "aethermesh.ai";
+      return new Response(null, {
+        status: 301,
+        headers: {
+          Location: canonical.toString(),
+          "Cache-Control": "public, max-age=3600",
+          ...SECURITY_HEADERS,
+        },
+      });
+    }
+
     if (url.pathname === "/api/health") {
       return json({
         ok: true,
