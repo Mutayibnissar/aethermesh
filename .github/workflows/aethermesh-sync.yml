@@ -19,7 +19,7 @@ jobs:
         run: |
           rm -rf /tmp/agency-agents
           git clone --depth 1 https://github.com/msitarzewski/agency-agents.git /tmp/agency-agents
-          rsync -a --delete --exclude='.git/' --exclude='runtime/' --exclude='.aethermesh/' --exclude='.github/workflows/aethermesh-sync.yml' /tmp/agency-agents/ ./
+          rsync -a --delete --exclude='.git/' --exclude='runtime/' --exclude='.aethermesh/' --exclude='.github/workflows/' /tmp/agency-agents/ ./
           rm -f .migration-placeholder
       - name: Restore AetherMesh docs
         run: |
