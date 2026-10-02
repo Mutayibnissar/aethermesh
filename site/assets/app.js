@@ -70,4 +70,59 @@ async function initAgentBench(){
 }
 initAgentBench();
 
-const form=$('#contact-form');form?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const title=encodeURIComponent('AetherMesh enquiry — '+(d.get('company')||'Company'));const body=encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\n\nWorkflow / objective:\n'+d.get('workflow'));location.href='https://github.com/Mutayibnissar/aethermesh/issues/new?title='+title+'&body='+body});
+
+const companyAgents=[
+ {title:"Chief of Staff",division:"executive",path:"specialized/specialized-chief-of-staff.md",cap:"Executive coordination, priorities, decisions and cross-functional follow-through."},
+ {title:"Business Strategist",division:"executive",path:"specialized/business-strategist.md",cap:"Competitive strategy, positioning, choices and business-model decisions."},
+ {title:"Research Synthesist",division:"executive",path:"research/research-synthesist.md",cap:"Turn scattered evidence into concise, decision-ready research."},
+ {title:"Workflow Architect",division:"executive",path:"specialized/specialized-workflow-architect.md",cap:"Map business processes, dependencies, failure modes and automation boundaries."},
+ {title:"Product Manager",division:"product",path:"product/product-manager.md",cap:"Product requirements, prioritisation, roadmaps and delivery decisions."},
+ {title:"Product Feedback Synthesizer",division:"product",path:"product/product-feedback-synthesizer.md",cap:"Convert customer and user feedback into product signals and priorities."},
+ {title:"Product Trend Researcher",division:"product",path:"product/product-trend-researcher.md",cap:"Track product, category and technology trends for opportunity discovery."},
+ {title:"UX Architect",division:"product",path:"design/design-ux-architect.md",cap:"Design information architecture, journeys and interaction systems."},
+ {title:"UI Designer",division:"product",path:"design/design-ui-designer.md",cap:"Design polished interfaces, visual systems and product surfaces."},
+ {title:"UX Researcher",division:"product",path:"design/design-ux-researcher.md",cap:"Research users, behaviours, needs and evidence behind product decisions."},
+ {title:"Software Architect",division:"engineering",path:"engineering/engineering-software-architect.md",cap:"System architecture, technical trade-offs and scalable implementation plans."},
+ {title:"AI Engineer",division:"engineering",path:"engineering/engineering-ai-engineer.md",cap:"AI integration, model workflows, deployment and production AI systems."},
+ {title:"Backend Architect",division:"engineering",path:"engineering/engineering-backend-architect.md",cap:"APIs, databases, services, scalability and backend architecture."},
+ {title:"Frontend Developer",division:"engineering",path:"engineering/engineering-frontend-developer.md",cap:"Production interfaces, frontend implementation and performance."},
+ {title:"DevOps Automator",division:"engineering",path:"engineering/engineering-devops-automator.md",cap:"CI/CD, infrastructure automation, deployment and operational tooling."},
+ {title:"Data Engineer",division:"engineering",path:"engineering/engineering-data-engineer.md",cap:"Data pipelines, ETL/ELT, warehousing and reliable data infrastructure."},
+ {title:"Growth Hacker",division:"growth",path:"marketing/marketing-growth-hacker.md",cap:"Growth experiments, acquisition loops, activation and measurable demand."},
+ {title:"Content Creator",division:"growth",path:"marketing/marketing-content-creator.md",cap:"Content systems, campaigns, editorial production and brand communication."},
+ {title:"SEO Specialist",division:"growth",path:"marketing/marketing-seo-specialist.md",cap:"Search visibility, content optimisation and organic acquisition."},
+ {title:"LinkedIn Content Creator",division:"growth",path:"marketing/marketing-linkedin-content-creator.md",cap:"Founder-led B2B content, distribution and professional audience growth."},
+ {title:"PR & Communications Manager",division:"growth",path:"marketing/marketing-pr-communications-manager.md",cap:"Narrative, media communication, launches and reputation workflows."},
+ {title:"Account Strategist",division:"revenue",path:"sales/sales-account-strategist.md",cap:"Account planning, buyer context, opportunity mapping and commercial strategy."},
+ {title:"Outbound Strategist",division:"revenue",path:"sales/sales-outbound-strategist.md",cap:"Target-account research, outbound sequencing and pipeline creation."},
+ {title:"Deal Strategist",division:"revenue",path:"sales/sales-deal-strategist.md",cap:"Deal strategy, qualification, objections, stakeholders and close planning."},
+ {title:"Pipeline Analyst",division:"revenue",path:"sales/sales-pipeline-analyst.md",cap:"Pipeline diagnostics, conversion analysis, forecasting and next actions."},
+ {title:"Financial Analyst",division:"finance",path:"finance/finance-financial-analyst.md",cap:"Financial analysis, unit economics, business cases and decision support."},
+ {title:"FP&A Analyst",division:"finance",path:"finance/finance-fpa-analyst.md",cap:"Planning, forecasting, budgets, variance analysis and operating models."},
+ {title:"Bookkeeper / Controller",division:"finance",path:"finance/finance-bookkeeper-controller.md",cap:"Financial records, controls, reconciliations and reporting discipline."},
+ {title:"Customer Success Manager",division:"operations",path:"specialized/customer-success-manager.md",cap:"Onboarding, adoption, retention, customer health and expansion signals."},
+ {title:"Operations Manager",division:"operations",path:"specialized/operations-manager.md",cap:"Operational systems, recurring processes, coordination and execution."},
+ {title:"Data Privacy Officer",division:"governance",path:"specialized/data-privacy-officer.md",cap:"Privacy controls, data handling, compliance workflows and risk boundaries."},
+ {title:"Automation Governance Architect",division:"governance",path:"specialized/automation-governance-architect.md",cap:"Agent permissions, controls, governance models and safe automation."},
+ {title:"Reality Checker",division:"quality",path:"testing/testing-reality-checker.md",cap:"Challenge assumptions, inspect evidence and identify gaps before release."},
+ {title:"Test Automation Engineer",division:"quality",path:"testing/testing-test-automation-engineer.md",cap:"Automated testing, regression coverage and repeatable quality gates."}
+];
+function initAgentDirectory(){
+ const grid=$('#agent-directory-grid'),search=$('#agent-directory-search'),filters=$('#agent-filters button'),empty=$('#agent-directory-empty');
+ if(!grid)return;
+ let active='all';
+ const labels={executive:'Executive',product:'Product + Design',engineering:'Engineering',growth:'Growth',revenue:'Revenue',finance:'Finance',operations:'Operations',governance:'Governance',quality:'Quality'};
+ const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+ function render(){
+  const q=(search?.value||'').trim().toLowerCase();
+  const list=companyAgents.filter(a=>(active==='all'||a.division===active)&&(!q||(a.title+' '+a.division+' '+a.cap+' '+a.path).toLowerCase().includes(q)));
+  grid.innerHTML=list.map((a,i)=>'<article class="agent-directory-card reveal show"><div class="agent-card-top"><span class="agent-index">'+String(i+1).padStart(2,'0')+'</span><span class="agent-division">'+esc(labels[a.division])+'</span></div><h3>'+esc(a.title)+'</h3><p>'+esc(a.cap)+'</p><div class="agent-card-bottom"><a href="https://github.com/Mutayibnissar/aethermesh/blob/main/'+a.path+'" target="_blank" rel="noopener">Repo agent ↗</a><button type="button" data-agent-task="'+esc(a.title)+'">Route work</button></div></article>').join('');
+  if(empty)empty.hidden=list.length>0;
+  $('[data-agent-task]',grid).forEach(b=>b.addEventListener('click',()=>{const input=$('#wf-input');if(input){input.value='Use the '+b.dataset.agentTask+' specialist to help with this business outcome';input.focus();document.querySelector('#command')?.scrollIntoView({behavior:'smooth',block:'start'})}}));
+ }
+ filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.agentFilter;render()}));
+ search?.addEventListener('input',render);
+ render();
+}
+initAgentDirectory();
+\nconst form=$('#contact-form');form?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const title=encodeURIComponent('AetherMesh enquiry — '+(d.get('company')||'Company'));const body=encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\n\nWorkflow / objective:\n'+d.get('workflow'));location.href='https://github.com/Mutayibnissar/aethermesh/issues/new?title='+title+'&body='+body});
