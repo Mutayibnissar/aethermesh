@@ -1,0 +1,1 @@
+export function planWorkflow(task,matches){const steps=matches.map((x,i)=>({id:"step-"+(i+1),agent:x.agent.id,dependsOn:i?["step-"+i]:[],input:i?"prior-step-output":task}));return{task,steps,execution:"dependency-aware-sequential"}}
