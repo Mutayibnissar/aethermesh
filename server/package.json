@@ -1,0 +1,1 @@
+{"name":"@aethermesh/server","version":"0.1.0","private":true,"type":"module","engines":{"node":">=20"},"scripts":{"start":"node src/index.mjs","dev":"node --watch src/index.mjs"},"dependencies":{}}
