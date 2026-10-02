@@ -47,6 +47,9 @@ footer{padding:27px 0;color:#5f6062;font:10px DM Mono;display:flex;justify-conte
 @media(max-width:620px){.shell{padding:0 18px}.hero h1{font-size:57px}.hero-copy{font-size:16px}.hero{padding-top:110px}.system-card{margin-top:10px}.section-intro{gap:25px;margin-bottom:35px}.product-grid,.offers{grid-template-columns:1fr}.demo-body{grid-template-columns:1fr}.demo-side{display:flex;gap:5px;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}.workflow-btn{min-width:160px;margin:0}.demo-main{padding:20px 15px}.manifesto > div,.arch-left{padding:28px}.arch-right{padding:20px}.offer{min-height:330px}.footer-links{gap:10px}.cursor,.cursor-dot{display:none!important}section{padding:90px 0}.final{padding:110px 0 90px}}
 @media(pointer:fine){.cursor,.cursor-dot{display:block}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* AETHER SITE AGENT */
+.agent-launcher{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;gap:9px;border:1px solid rgba(215,255,85,.35);background:rgba(12,13,15,.92);color:#fff;border-radius:999px;padding:10px 13px 10px 10px;box-shadow:0 18px 60px rgba(0,0,0,.45),0 0 40px rgba(215,255,85,.05);backdrop-filter:blur(18px);cursor:pointer;transition:.25s}.agent-launcher:hover{transform:translateY(-3px);border-color:var(--acid)}.agent-avatar{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--acid);color:#090a08;font:700 11px 'DM Mono',monospace;box-shadow:0 0 20px rgba(215,255,85,.2)}.agent-launcher span:last-child{font:11px 'DM Mono',monospace;letter-spacing:.04em}.agent-panel{position:fixed;right:22px;bottom:78px;width:min(420px,calc(100vw - 28px));height:min(650px,calc(100svh - 105px));z-index:81;display:none;flex-direction:column;border:1px solid rgba(255,255,255,.15);border-radius:24px;background:rgba(9,10,12,.96);box-shadow:0 30px 100px rgba(0,0,0,.65),0 0 80px rgba(141,124,255,.06);backdrop-filter:blur(22px);overflow:hidden}.agent-panel.open{display:flex;animation:agentIn .25s ease}@keyframes agentIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}.agent-head{padding:15px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.agent-id{display:flex;align-items:center;gap:10px}.agent-id strong{display:block;font-size:12px}.agent-id small{display:block;color:#666;font:9px 'DM Mono',monospace;margin-top:2px}.agent-status{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 12px var(--acid)}.agent-close{border:0;background:transparent;color:#777;font-size:20px;cursor:pointer}.agent-close:hover{color:#fff}.agent-messages{flex:1;overflow:auto;padding:17px;display:flex;flex-direction:column;gap:11px}.agent-msg{max-width:88%;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:#111216;color:#c8c8ca;font-size:12px;line-height:1.55;white-space:pre-wrap}.agent-msg.user{align-self:flex-end;background:#d7ff55;color:#090a08;border-color:#d7ff55}.agent-msg.agent{align-self:flex-start}.agent-msg .agent-label{display:block;color:#6c6d70;font:8px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}.agent-msg.user .agent-label{color:#526116}.agent-suggestions{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}.agent-chip{border:1px solid var(--line);background:#101114;color:#aaa;border-radius:999px;padding:7px 9px;font:9px 'DM Mono',monospace;cursor:pointer}.agent-chip:hover{border-color:var(--acid);color:#fff}.agent-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#0b0c0e}.agent-input{min-width:0;flex:1;border:1px solid var(--line2);outline:0;background:#111216;color:#fff;border-radius:12px;padding:11px 12px;font:12px Manrope}.agent-input:focus{border-color:rgba(215,255,85,.45)}.agent-send{width:42px;border:1px solid var(--acid);background:var(--acid);color:#090a08;border-radius:12px;cursor:pointer;font-weight:800}.agent-send:disabled{opacity:.5;cursor:wait}.agent-note{padding:0 14px 10px;color:#555;font:8px 'DM Mono',monospace}.agent-typing{display:flex;gap:4px;align-items:center}.agent-typing i{width:4px;height:4px;border-radius:50%;background:#777;animation:typing 1s infinite}.agent-typing i:nth-child(2){animation-delay:.15s}.agent-typing i:nth-child(3){animation-delay:.3s}@keyframes typing{50%{opacity:.25;transform:translateY(-2px)}}@media(max-width:620px){.agent-launcher{right:14px;bottom:14px}.agent-panel{right:14px;bottom:68px;width:calc(100vw - 28px);height:min(620px,calc(100svh - 90px));border-radius:20px}}
 </style>
 </head>
 <body>
@@ -54,7 +57,7 @@ footer{padding:27px 0;color:#5f6062;font:10px DM Mono;display:flex;justify-conte
 <header id="header"><div class="shell nav">
 <a class="brand" href="#top"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 17.5 12 4l7 13.5-7-3.5-7 3.5Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/></svg></span>Aether<b>Mesh</b></a>
 <nav class="links"><a href="#system">System</a><a href="#products">Products</a><a href="#architecture">Architecture</a><a href="#work">Work with us</a></nav>
-<a class="nav-cta" href="#work">Build a workflow ↗</a><button class="menu" aria-label="Open navigation">☰</button>
+<button class="nav-cta" id="nav-agent" type="button">Ask Aether ↗</button><a class="nav-cta" href="#work">Build a workflow ↗</a><button class="menu" aria-label="Open navigation">☰</button>
 </div></header>
 
 <main id="top">
@@ -148,6 +151,28 @@ footer{padding:27px 0;color:#5f6062;font:10px DM Mono;display:flex;justify-conte
 <section class="final"><div class="final-glow"></div><div class="shell reveal"><div class="eyebrow">AETHERMESH</div><h2>Give your company an <span>execution layer.</span></h2><p>Find the work worth automating. Design the agent system. Prove it safely. Operate it.</p><div class="actions"><a class="btn primary" href="https://github.com/Mutayibnissar/aethermesh/issues/new?title=AetherMesh%20Conversation">Start a conversation ↗</a><a class="btn" href="#top">Back to top ↑</a></div></div></section>
 </main>
 
+
+<button class="agent-launcher" id="agent-launcher" type="button" aria-label="Open Aether site agent">
+  <span class="agent-avatar">A</span><span>ASK AETHER</span>
+</button>
+<aside class="agent-panel" id="agent-panel" aria-label="AetherMesh site agent">
+  <div class="agent-head">
+    <div class="agent-id"><span class="agent-status"></span><div><strong>Aether · Site Agent</strong><small>WORKFLOW INTELLIGENCE / LOCAL MODE</small></div></div>
+    <button class="agent-close" id="agent-close" type="button" aria-label="Close agent">×</button>
+  </div>
+  <div class="agent-messages" id="agent-messages"></div>
+  <div class="agent-suggestions" id="agent-suggestions">
+    <button class="agent-chip" type="button" data-q="What is AetherMesh?">What is AetherMesh?</button>
+    <button class="agent-chip" type="button" data-q="Which product fits customer support?">Customer support</button>
+    <button class="agent-chip" type="button" data-q="How does a Workflow Pilot work?">Pilot details</button>
+    <button class="agent-chip" type="button" data-q="I want to automate a workflow">Automate a workflow</button>
+  </div>
+  <div class="agent-note">Local site agent. A server-side AI endpoint can be connected later without exposing API keys in GitHub Pages.</div>
+  <form class="agent-form" id="agent-form">
+    <input class="agent-input" id="agent-input" autocomplete="off" placeholder="Ask about products, workflows, pilots…" aria-label="Ask Aether">
+    <button class="agent-send" id="agent-send" type="submit" aria-label="Send">↗</button>
+  </form>
+</aside>
 <div class="shell"><footer><span>© 2026 AetherMesh · Governed AI workflows</span><div class="footer-links"><a href="https://github.com/Mutayibnissar/aethermesh">GitHub ↗</a><a href="#system">System</a><a href="#work">Contact</a></div></footer></div>
 
 <script>
@@ -173,6 +198,99 @@ function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const p of pts){p.
 addEventListener('resize',resize);addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});resize();draw();
 
 const cur=document.querySelector('.cursor'),dot=document.querySelector('.cursor-dot');addEventListener('pointermove',e=>{dot.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';cur.style.transform='translate('+(e.clientX-9)+'px,'+(e.clientY-9)+'px)'});document.querySelectorAll('a,button,.product').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+
+/* Aether site agent
+   Static GitHub Pages mode: grounded local responses + optional server endpoint.
+   To connect a real LLM later, set window.AETHERMESH_AGENT_ENDPOINT to a server-side
+   endpoint that accepts {messages:[...]} and returns {reply:"..."}.
+*/
+const AETHERMESH_AGENT_ENDPOINT = window.AETHERMESH_AGENT_ENDPOINT || "";
+const agentLauncher=document.getElementById('agent-launcher');
+const agentPanel=document.getElementById('agent-panel');
+const agentClose=document.getElementById('agent-close');
+const agentMessages=document.getElementById('agent-messages');
+const agentForm=document.getElementById('agent-form');
+const agentInput=document.getElementById('agent-input');
+const agentSend=document.getElementById('agent-send');
+const agentSuggestions=document.getElementById('agent-suggestions');
+let agentHistory=[];
+
+function addAgentMessage(text,who='agent'){
+  const el=document.createElement('div');
+  el.className='agent-msg '+who;
+  const label=document.createElement('span');
+  label.className='agent-label';
+  label.textContent=who==='user'?'YOU':'AETHER';
+  const body=document.createElement('span');
+  body.textContent=text;
+  el.append(label,body);
+  agentMessages.appendChild(el);
+  agentMessages.scrollTop=agentMessages.scrollHeight;
+}
+function openAgent(){
+  agentPanel.classList.add('open');
+  agentLauncher.setAttribute('aria-expanded','true');
+  if(!agentMessages.children.length){
+    addAgentMessage("I’m Aether, the site agent for AetherMesh. I can explain the products, map a workflow to the right product, or walk you through a Workflow Diagnostic or Pilot.");
+  }
+  setTimeout(()=>agentInput.focus(),80);
+}
+function closeAgent(){agentPanel.classList.remove('open');agentLauncher.setAttribute('aria-expanded','false')}
+agentLauncher.addEventListener('click',openAgent);
+agentClose.addEventListener('click',closeAgent);
+document.getElementById('nav-agent').addEventListener('click',openAgent);
+
+function localAgentReply(q){
+  const s=q.toLowerCase().trim();
+  if(/^(hi|hello|hey|yo|assalam|salam)/.test(s)) return "Hello. I’m Aether. Tell me what your company does and which recurring workflow you want to improve.";
+  if(/what is aether|what does aethermesh|about aethermesh/.test(s)) return "AetherMesh is an AI operating system for business workflows. It combines specialist agents with routing, workflow state, evaluation, policy controls and human approval boundaries.";
+  if(/customer support|support|ticket|customer operation/.test(s)) return "For customer operations, MeshSupport is the focused product. It can classify requests, retrieve evidence, prepare resolutions, run quality checks and route consequential responses for human approval.";
+  if(/it incident|it ops|helpdesk|incident/.test(s)) return "MeshDesk is designed for IT operations: triage an incident, gather evidence, search runbooks, form a diagnosis, prepare remediation and gate risky production actions.";
+  if(/revenue|sales|crm|outreach|pipeline|lead/.test(s)) return "MeshRevenue covers account research, buyer context, qualification, CRM intelligence and next-action preparation. External actions remain subject to the customer’s approval policy.";
+  if(/market|competitor|intelligence|research|trend/.test(s)) return "MeshIntel continuously monitors market, competitor, technology and regulatory signals, then produces evidence-backed intelligence briefs and opportunity signals.";
+  if(/data|readiness|integration|knowledge/.test(s)) return "MeshData focuses on AI readiness: data quality, missing context, permissions, knowledge structures and integration gaps.";
+  if(/cost|finops|token|model routing|ai spend/.test(s)) return "MeshFinOps tracks AI usage economics and helps compare model cost/performance, detect expensive workflows and design routing or budget controls.";
+  if(/governance|security|guard|audit|permission|evaluation/.test(s)) return "MeshGuard is the governance layer: agent inventory, permissions, policies, evaluation suites, audit trails, approval gates, incident records and rollback controls.";
+  if(/workflow pilot|pilot|how.*pilot/.test(s)) return "The Workflow Pilot takes one recurring workflow through architecture, human-approval design, evaluation and a controlled working pilot. The current commercial target is $7,500+ and is intended to produce evidence for a production decision.";
+  if(/diagnostic|workflow map|opportunity map/.test(s)) return "The Workflow Diagnostic is a fixed-scope entry product. It maps the current workflow, identifies automation candidates, defines approval boundaries, maps data/integrations and creates an evaluation plan.";
+  if(/price|pricing|cost|how much/.test(s)) return "Current site pricing hypotheses are: Workflow Diagnostic as a fixed-scope paid diagnostic; Workflow Pilot at a $7,500+ target; production implementations at roughly $15k–$35k; managed operations at roughly $3k–$10k/month. These are commercial targets, not guarantees.";
+  if(/automate|automation|workflow/.test(s)) return "Start with one recurring workflow. Tell me: what triggers it, who handles it, which tools/data are involved, how often it happens, and where humans currently make decisions. I can then suggest the most relevant AetherMesh product.";
+  if(/product|which.*product|recommend/.test(s)) return "Tell me the workflow rather than the department—for example 'qualify inbound leads', 'resolve support tickets', 'investigate IT incidents', or 'monitor competitors'. I’ll map it to the relevant product surface.";
+  if(/contact|talk|buy|start|sales|interested/.test(s)) return "Use the Workflow Diagnostic or Workflow Pilot buttons on this page to open a GitHub request. For a useful first conversation, include the workflow, current tools, approximate volume and the person who owns the process.";
+  return "I can help with AetherMesh products, workflow automation, governance, pricing, the Workflow Diagnostic or the Workflow Pilot. Try: “Which product fits customer support?” or describe a recurring workflow.";
+}
+
+async function askAgent(q){
+  if(!q.trim()) return;
+  addAgentMessage(q,'user');
+  agentHistory.push({role:'user',content:q});
+  agentInput.value='';
+  agentSend.disabled=true;
+  const typing=document.createElement('div');typing.className='agent-msg agent';typing.id='agent-typing';
+  typing.innerHTML='<span class="agent-label">AETHER</span><span class="agent-typing"><i></i><i></i><i></i></span>';
+  agentMessages.appendChild(typing);agentMessages.scrollTop=agentMessages.scrollHeight;
+  let reply='';
+  try{
+    if(AETHERMESH_AGENT_ENDPOINT){
+      const res=await fetch(AETHERMESH_AGENT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:agentHistory})});
+      if(!res.ok) throw new Error('agent endpoint '+res.status);
+      const data=await res.json();
+      reply=data.reply||data.output||'No response returned.';
+    }else{
+      await new Promise(r=>setTimeout(r,350));
+      reply=localAgentReply(q);
+    }
+  }catch(e){
+    reply=localAgentReply(q);
+  }
+  document.getElementById('agent-typing')?.remove();
+  addAgentMessage(reply,'agent');
+  agentHistory.push({role:'assistant',content:reply});
+  agentSend.disabled=false;
+  agentInput.focus();
+}
+agentForm.addEventListener('submit',e=>{e.preventDefault();askAgent(agentInput.value)});
+agentSuggestions.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>askAgent(b.dataset.q)));
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AetherMesh","url":"https://mutayibnissar.github.io/aethermesh/","description":"Governed AI workflows and AI operating systems for modern companies."}</script>
 </body>
