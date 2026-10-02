@@ -1,0 +1,39 @@
+name: Sync Agency Agents
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: aethermesh-sync
+  cancel-in-progress: true
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import upstream agent library
+        run: |
+          rm -rf /tmp/agency-agents
+          git clone --depth 1 https://github.com/msitarzewski/agency-agents.git /tmp/agency-agents
+          rsync -a --delete --exclude='.git/' --exclude='runtime/' --exclude='.aethermesh/' --exclude='.github/workflows/aethermesh-sync.yml' /tmp/agency-agents/ ./
+          rm -f .migration-placeholder
+      - name: Restore AetherMesh docs
+        run: |
+          cat > AETHERMESH.md <<'EOF'
+          # AetherMesh
+          
+          AetherMesh is an upgraded execution layer around the Agency Agents specialist library.
+          
+          It preserves the upstream agent corpus while adding deterministic routing, policy controls, workflow planning, evaluation, and a provider-neutral runtime under runtime/.
+          EOF
+      - name: Commit synchronized tree
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m 'sync: mirror upstream agency-agents'
+          git push
