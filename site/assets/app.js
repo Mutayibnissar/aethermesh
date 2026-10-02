@@ -17,7 +17,36 @@ function render(k){key=k;const f=flows[k];title.textContent=f.title;score.textCo
 nav.forEach(b=>b.addEventListener('click',()=>{nav.forEach(x=>x.classList.remove('active'));b.classList.add('active');clearInterval(timer);render(b.dataset.flow)}));
 run?.addEventListener('click',()=>{clearInterval(timer);const stages=$$('.stage',timeline);let i=0;status.textContent='RUNNING';timer=setInterval(()=>{if(i<stages.length){stages[i].classList.add('on');bar.style.width=((i+1)/stages.length*100)+'%';status.textContent='STEP '+(i+1)+' / '+stages.length;i++}else{clearInterval(timer);status.textContent='CONTROLLED · COMPLETE'}},550)});render(key)}
 initLab();
-function initWorkforce(){const form=$('#wf-form'),input=$('#wf-input'),out=$('#wf-result');if(!form||!out)return;const roles=[['Strategy Lead','Define objective + decision criteria'],['Research Analyst','Gather and verify evidence'],['Product Lead','Translate evidence into opportunities'],['Engineering Lead','Design execution path / prototype'],['Growth Operator','Prepare market activation plan'],['Revenue Operator','Map buyers + commercial actions'],['Governance Lead','Evaluate risk + approval boundaries']];
-form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();if(!q){input.focus();return}let chosen=[roles[0]];const s=q.toLowerCase();if(/research|competitor|market|trend|customer|industry|data/.test(s))chosen.push(roles[1]);if(/product|feature|launch|idea|strategy/.test(s))chosen.push(roles[2]);if(/build|code|prototype|software|website|app|automate/.test(s))chosen.push(roles[3]);if(/marketing|campaign|content|growth|brand/.test(s))chosen.push(roles[4]);if(/sales|lead|revenue|buyer|outbound|crm/.test(s))chosen.push(roles[5]);chosen.push(roles[6]);chosen=[...new Map(chosen.map(x=>[x[0],x])).values()];out.innerHTML=chosen.map((r,i)=>'<div class="wf-step"><span class="wf-num">0'+(i+1)+'</span><span class="wf-role">'+r[0]+'<small>'+r[1]+'</small></span><span class="wf-state">queued</span></div>').join('');const rows=$$('.wf-step',out);rows.forEach((row,i)=>setTimeout(()=>{row.classList.add('active');row.querySelector('.wf-state').textContent='working';setTimeout(()=>{row.classList.remove('active');row.classList.add('done');row.querySelector('.wf-state').textContent=i===rows.length-1?'approval':'complete'},600)},i*700))})}
-initWorkforce();
+async function callRuntime(task){
+ const base=(window.AETHERMESH_RUNTIME_ENDPOINT||"").replace(/\\/$/,"");
+ if(!base)return null;
+ try{
+   const r=await fetch(base+"/api/workforce",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({task})});
+   if(!r.ok)throw new Error("runtime "+r.status);
+   return await r.json();
+ }catch(e){console.warn("AetherMesh runtime unavailable; using local experience.",e);return null}
+}
+function initWorkforce(){
+ const form=$('#wf-form'),input=$('#wf-input'),out=$('#wf-result');if(!form||!out)return;
+ const roles=[['Strategy Lead','Define objective + decision criteria'],['Research Analyst','Gather and verify evidence'],['Product Lead','Translate evidence into opportunities'],['Engineering Lead','Design execution path / prototype'],['Growth Operator','Prepare market activation plan'],['Revenue Operator','Map buyers + commercial actions'],['Governance Lead','Evaluate risk + approval boundaries']];
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();const q=input.value.trim();if(!q){input.focus();return}
+  out.innerHTML='<div class="wf-step active"><span class="wf-num">01</span><span class="wf-role">AetherMesh Runtime<small>routing agents · planning dependencies · checking policy</small></span><span class="wf-state">working</span></div>';
+  const live=await callRuntime(q);
+  if(live?.ok){
+   const rows=(live.workforce||[]).map((x,i)=>'<div class="wf-step '+(i?'':'done')+'"><span class="wf-num">0'+(i+1)+'</span><span class="wf-role">'+x.role+'<small>'+((x.agents||[]).map(a=>a.title||a.id).join(' · ')||'specialist routing')+'</small></span><span class="wf-state">'+(i===live.workforce.length-1?'approval':'complete')+'</span></div>').join('');
+   out.innerHTML='<div class="runtime-live"><span>● RUNTIME CONNECTED</span><span>'+live.routed.length+' agents routed</span><span>policy: '+live.policy.decision+'</span></div>'+rows;
+   return;
+  }
+  let chosen=[roles[0]],s=q.toLowerCase();
+  if(/research|competitor|market|trend|customer|industry|data/.test(s))chosen.push(roles[1]);
+  if(/product|feature|launch|idea|strategy/.test(s))chosen.push(roles[2]);
+  if(/build|code|prototype|software|website|app|automate/.test(s))chosen.push(roles[3]);
+  if(/marketing|campaign|content|growth|brand/.test(s))chosen.push(roles[4]);
+  if(/sales|lead|revenue|buyer|outbound|crm/.test(s))chosen.push(roles[5]);
+  chosen.push(roles[6]);chosen=[...new Map(chosen.map(x=>[x[0],x])).values()];
+  out.innerHTML=chosen.map((r,i)=>'<div class="wf-step"><span class="wf-num">0'+(i+1)+'</span><span class="wf-role">'+r[0]+'<small>'+r[1]+'</small></span><span class="wf-state">queued</span></div>').join('');
+  const rows=$$('.wf-step',out);rows.forEach((row,i)=>setTimeout(()=>{row.classList.add('active');row.querySelector('.wf-state').textContent='working';setTimeout(()=>{row.classList.remove('active');row.classList.add('done');row.querySelector('.wf-state').textContent=i===rows.length-1?'approval':'complete'},600)},i*700));
+ });
+}
 const form=$('#contact-form');form?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const title=encodeURIComponent('AetherMesh enquiry — '+(d.get('company')||'Company'));const body=encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\n\nWorkflow / objective:\n'+d.get('workflow'));location.href='https://github.com/Mutayibnissar/aethermesh/issues/new?title='+title+'&body='+body});
