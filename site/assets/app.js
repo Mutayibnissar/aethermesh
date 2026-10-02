@@ -49,4 +49,25 @@ function initWorkforce(){
   const rows=$$('.wf-step',out);rows.forEach((row,i)=>setTimeout(()=>{row.classList.add('active');row.querySelector('.wf-state').textContent='working';setTimeout(()=>{row.classList.remove('active');row.classList.add('done');row.querySelector('.wf-state').textContent=i===rows.length-1?'approval':'complete'},600)},i*700));
  });
 }
+async function initAgentBench(){
+ const grid=$('#agent-grid'),filters=$('#bench-filters'),search=$('#bench-search'),count=$('#agent-count');
+ if(!grid||!filters)return;
+ try{
+  const r=await fetch('./assets/agent-registry.json',{cache:'no-store'}); if(!r.ok)throw new Error('registry '+r.status);
+  const data=await r.json(); const agents=data.agents||[]; let dept='ALL',term='';
+  const depts=['ALL',...(data.departments||[])];
+  filters.innerHTML=depts.map(x=>'<button class="bench-filter '+(x==='ALL'?'active':'')+'" data-dept="'+x+'">'+x+'</button>').join('');
+  const paint=()=>{
+   const q=term.toLowerCase();
+   const visible=agents.filter(x=>(dept==='ALL'||x.department===dept)&&(!q||(x.name+' '+x.department+' '+x.mission).toLowerCase().includes(q)));
+   grid.innerHTML=visible.map((x,i)=>'<article class="agent-card reveal show"><div class="agent-card-top"><span class="agent-dept">'+x.department.toUpperCase()+'</span><span class="agent-index">'+String(i+1).padStart(2,'0')+'</span></div><h3>'+x.name+'</h3><p>'+x.mission+'</p><div class="agent-card-foot"><span class="agent-source">'+x.source.replace(/^[^/]+\//,'')+'</span><a href="'+x.sourceUrl+'" target="_blank" rel="noreferrer">Open source ↗</a></div></article>').join('');
+   count.textContent=visible.length+' of '+agents.length+' agents shown · sourced from your AetherMesh repository';
+  };
+  filters.addEventListener('click',e=>{const b=e.target.closest('[data-dept]');if(!b)return;dept=b.dataset.dept;filters.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));paint()});
+  search?.addEventListener('input',()=>{term=search.value.trim();paint()});
+  paint();
+ }catch(e){grid.innerHTML='<div class="wf-empty">Agent registry unavailable. The core workforce remains available above.</div>';console.warn('AetherMesh agent registry unavailable',e)}
+}
+initAgentBench();
+
 const form=$('#contact-form');form?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const title=encodeURIComponent('AetherMesh enquiry — '+(d.get('company')||'Company'));const body=encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\n\nWorkflow / objective:\n'+d.get('workflow'));location.href='https://github.com/Mutayibnissar/aethermesh/issues/new?title='+title+'&body='+body});
