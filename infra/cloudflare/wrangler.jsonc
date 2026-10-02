@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "aethermesh-web",
+  "main": "./worker.js",
+  "compatibility_date": "2026-10-02",
+  "workers_dev": false,
+  "assets": {
+    "directory": "../../site",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    {
+      "pattern": "aethermesh.ai",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.aethermesh.ai",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
