@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  workflows: write
 concurrency:
   group: aethermesh-sync
   cancel-in-progress: true
