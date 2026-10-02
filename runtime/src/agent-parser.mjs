@@ -1,0 +1,3 @@
+import fs from "node:fs";
+import path from "node:path";
+export function discoverAgents(root){const out=[];const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){if(e.name.startsWith(".")||e.name==="node_modules"||e.name==="runtime")continue;const f=path.join(d,e.name);if(e.isDirectory())walk(f);else if(e.isFile()&&e.name.endsWith(".md")){const t=fs.readFileSync(f,"utf8");out.push({id:path.relative(root,f).replaceAll(path.sep,"/"),title:t.match(/^#\s+(.+)$/m)?.[1]?.trim()??e.name.replace(/\.md$/,""),description:t.match(/^>\s*(.+)$/m)?.[1]?.trim()??"",path:f,text:t})}}};walk(root);return out.sort((a,b)=>a.id.localeCompare(b.id))}
