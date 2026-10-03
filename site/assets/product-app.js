@@ -21,9 +21,30 @@ document.getElementById("agent-roster").innerHTML=p.agents.map((x,i)=>'<div clas
 document.getElementById("workflow-graph").innerHTML=p.steps.map((x,i)=>'<div class="workflow-node" data-step="'+i+'"><span>'+String(i+1).padStart(2,"0")+'</span><b>'+esc(x)+'</b><small>controlled stage</small></div>').join("");
 document.getElementById("eval-score").textContent="EVAL "+p.eval+" / 100";
 const run=document.getElementById("demo-run"),state=document.getElementById("demo-state");
-run?.addEventListener("click",()=>{
+async function runLiveRuntime(task){
+ const base=(window.AETHERMESH_RUNTIME_ENDPOINT||"").trim().replace(/\\/$/,"");
+ if(!base)return null;
+ try{
+  const r=await fetch(base+"/api/workforce",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({task})});
+  if(!r.ok)throw new Error("runtime "+r.status);
+  return await r.json();
+ }catch(e){console.warn("AetherMesh runtime unavailable; using product demo.",e);return null;}
+}
+run?.addEventListener("click",async()=>{
  const nodes=[...document.querySelectorAll(".workflow-node")];let i=0;clearInterval(window.productTimer);
- state.textContent="RUNNING";set("metric-state","RUNNING");set("metric-eval","—");
+ state.textContent="CONNECTING";set("metric-state","CONNECTING");set("metric-eval","—");
  nodes.forEach(n=>n.classList.remove("active","complete"));
+ const live=await runLiveRuntime(p.name+" workflow: "+p.summary);
+ if(live?.ok){
+  state.textContent="RUNTIME CONNECTED";set("metric-state","CONNECTED");
+  const routed=Array.isArray(live.routed)?live.routed.length:0;
+  const decision=live.policy?.decision||"review";
+  set("metric-eval",live.evaluation?.score?String(live.evaluation.score):p.eval+" / 100");
+  set("metric-gate",decision.toUpperCase());
+  set("agent-total",String(routed).padStart(2,"0"));
+  nodes.forEach(n=>n.classList.add("complete"));
+  return;
+ }
+ state.textContent="DEMO MODE";set("metric-state","DEMO");
  window.productTimer=setInterval(()=>{if(i<nodes.length){nodes[i].classList.add("active");if(i)nodes[i-1].classList.remove("active"),nodes[i-1].classList.add("complete");i++;}else{clearInterval(window.productTimer);nodes.at(-1)?.classList.remove("active");nodes.at(-1)?.classList.add("complete");state.textContent="COMPLETE";set("metric-state","COMPLETE");set("metric-eval",p.eval+" / 100");}},430);
 });
