@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AetherMesh product workspace — governed AI execution for business workflows.">
+<title>Product Workspace — AetherMesh</title>
+<link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+<header id="header"><div class="shell nav">
+<a class="brand" href="./"><span class="mark">△</span>Aether <b>Mesh</b></a>
+<nav class="links"><a href="./products.html">Products</a><a href="./workflows.html">Workflows</a><a href="./workforce.html">Workforce</a><a href="./architecture.html">Architecture</a></nav>
+<div class="nav-actions"><a class="mini-btn" href="#" data-open-agent>Ask Aether ↗</a><a class="mini-btn" href="./contact.html">Start ↗</a></div>
+<button id="menu" class="menu" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">☰</button></div>
+<nav id="mobile-nav" class="mobile-nav"><a data-close-menu href="./products.html">Products</a><a data-close-menu href="./workflows.html">Workflows</a><a data-close-menu href="./workforce.html">Workforce</a><a data-close-menu href="./architecture.html">Architecture</a><a class="btn primary" href="./contact.html">Start a conversation ↗</a></nav></header>
+
+<main>
+<section class="hero product-workspace-hero"><div class="grid-bg"></div><div class="shell">
+<div class="eyebrow" id="product-kicker">PRODUCT WORKSPACE</div>
+<h1 id="product-title">MeshOps<br><span>execution workspace.</span></h1>
+<p class="hero-copy" id="product-summary"></p>
+<div class="actions"><button class="btn primary" id="demo-run" type="button">Run product demo ↗</button><a class="btn" id="product-cta" href="./contact.html">Talk to AetherMesh</a></div>
+<div class="product-statusbar"><span id="product-status">DEMO / CONTROLLED MODE</span><span id="product-owner">OWNER</span><span id="product-risk">RISK: REVIEW</span></div>
+</div></section>
+
+<section class="product-console"><div class="shell">
+<div class="section-head"><div><div class="kicker">01 / Command surface</div><h2>See the system<br><span>before it acts.</span></h2></div><p>Every workspace exposes the same operating primitives: routed specialists, workflow state, policy boundaries, evaluation and an explicit human commit point.</p></div>
+<div class="console-grid">
+<article class="console-panel"><div class="console-head"><span>WORKFLOW GRAPH</span><span id="demo-state">READY</span></div><div id="workflow-graph" class="workflow-graph"></div><div class="console-foot"><span>ROUTE → PLAN → POLICY → EVALUATE</span><span id="eval-score">EVAL —</span></div></article>
+<article class="console-panel"><div class="console-head"><span>AGENT ROSTER</span><span id="agent-total">00</span></div><div id="agent-roster" class="roster"></div><div class="console-foot"><span>REPOSITORY SPECIALISTS</span><span>GOVERNED</span></div></article>
+</div>
+</div></section>
+
+<section><div class="shell">
+<div class="section-head"><div><div class="kicker">02 / Control room</div><h2>Measure the work.<br><span>Control the commit.</span></h2></div><p>Demo telemetry is illustrative. Production execution requires a deployed runtime, connected systems and explicit customer approval policy.</p></div>
+<div class="metrics-grid">
+<div class="metric-card"><span>WORKFLOW STATE</span><b id="metric-state">READY</b><small>Deterministic demo state</small></div>
+<div class="metric-card"><span>EVALUATION</span><b id="metric-eval">—</b><small>Illustrative quality score</small></div>
+<div class="metric-card"><span>APPROVAL GATE</span><b id="metric-gate">REQUIRED</b><small>Human-controlled commit</small></div>
+<div class="metric-card"><span>DATA POSTURE</span><b id="metric-data">SCOPED</b><small>Depends on deployment</small></div>
+</div>
+<div class="approval-panel"><div><span class="kicker">FINAL COMMIT</span><h3 id="approval-title">Human approval required.</h3><p id="approval-copy">The demo prepares an action but does not send, publish, delete, purchase or modify anything.</p></div><span class="approval-pill">NO EXTERNAL ACTION</span></div>
+</div></section>
+
+<section><div class="shell">
+<div class="section-head"><div><div class="kicker">03 / Product scope</div><h2 id="scope-title">What this surface handles.</h2></div><p id="scope-copy"></p></div>
+<div id="scope-grid" class="grid3"></div>
+</div></section>
+
+<section><div class="shell"><div class="banner"><div><div class="kicker">Commercial entry</div><h3>Prove one workflow first.</h3><p>Start with a fixed-scope diagnostic, then move to a controlled pilot if the workflow qualifies.</p></div><div class="actions"><a class="btn" href="./contact.html?offer=diagnostic">Workflow Diagnostic ↗</a><a class="btn primary" href="./contact.html?offer=pilot">Workflow Pilot ↗</a></div></div></div></section>
+</main>
+
+<div class="shell"><footer><span>© 2026 AetherMesh</span><div class="footer-links"><a href="./products.html">Products</a><a href="./contact.html">Contact</a><a href="https://github.com/Mutayibnissar/aethermesh" rel="noopener noreferrer">GitHub ↗</a></div></footer></div>
+
+<button class="agent-launcher" id="agent-launcher" type="button" aria-label="Open Aether site agent"><span class="agent-avatar">A</span><span>ASK AETHER</span></button>
+<aside class="agent-panel" id="agent-panel" aria-label="Aether site agent" aria-hidden="true"><div class="agent-head"><b>Aether · Product Agent</b><button id="agent-close" class="agent-close" type="button" aria-label="Close Aether site agent">×</button></div><div id="agent-messages" class="agent-messages"></div><div class="agent-suggestions"><button type="button" class="agent-chip" data-q="What does this product do?">Product scope</button><button type="button" class="agent-chip" data-q="How does the pilot work?">Pilot</button></div><form id="agent-form" class="agent-form"><input id="agent-input" class="agent-input" aria-label="Ask Aether" placeholder="Ask Aether…"><button class="agent-send" type="submit" aria-label="Send message">↗</button></form></aside>
+<script src="./assets/runtime-config.js"></script><script src="./assets/app.js"></script>
+<script src="./assets/product-app.js"></script>
+</body></html>
